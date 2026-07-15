@@ -15,6 +15,7 @@ Likewise, calculations aiming to capture more complex elements (such as opto-ele
 
 ### All that being said, Quantum Espresso has some undeniable advantages over other computational chemistry codes:
 **1. Cost:**
+
 **2. Complex Calculations:**
 
 
