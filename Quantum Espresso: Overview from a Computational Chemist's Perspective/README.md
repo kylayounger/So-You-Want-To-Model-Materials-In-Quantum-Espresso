@@ -23,23 +23,23 @@ Due to the wide range of internal packages, Quantum Espresso has the capability 
 > 2. Nudged Elastic Band (NEB): calculates the transition states (including the Minimum Enegery Path and Activation Energy) of a reaction. Uses intermediate structures/spring forces to model the potential energy surface of a given reaction (currently not included in this repository).
 > 3. CP: inlcudes Car-Parinello Molecular Dynamics (CPMD) and Born-Oppenheimer Molecular Dynamics (BOMD) functionalities. This package allows the silmulation of atomic movement, disordered materials, and electron/ion dynamics at both small and large time-scales (currently not included in this repository).
 
-**3. Hardware Scalability**
+**3. Hardware Scalability:**
 Quantum Espresso is easy to use on High Performance Computers (HPCs); the program is designed to distribute workloads over mutiple CPUs/GPUs, making it (relativly) efficient at most calculation types.
 
-**4. Pseudopotential Range**
+**4. Pseudopotential Range:**
 Quantum Espresso supports a wide range of psuedopotentials, allowing you to select the type of core-electron approximation that suits your system best. The program supports Projector Augmented Wave (PAW), Ultrasoft, and Norm-Conserving (NC) pseudopotentials.
 
 
 ## Useful Resources
 These resources have been invaluable in my journey in learning Quantum Espresso! Much of the information I relay here is sourced from the following:
 
-### Quantum Espresso Documentation:
+**Quantum Espresso Documentation:**
 https://www.quantum-espresso.org/documentation/
 
-### Density Functional Theory Using Quantum Espresso (blog):
+**Density Functional Theory Using Quantum Espresso (blog):**
 https://pranabdas.github.io/espresso/
 
-### Materials Square (blog):
+**Materials Square (blog):**
 https://www.materialssquare.com/
 
 
