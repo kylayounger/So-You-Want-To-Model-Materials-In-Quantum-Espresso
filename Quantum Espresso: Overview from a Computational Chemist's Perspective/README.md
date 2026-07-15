@@ -13,7 +13,8 @@ For example, if you want to obtain the band structure of a GaAs unit cell, you w
 
 Likewise, calculations aiming to capture more complex elements (such as opto-electronic coefficients) may require more module jobs than you expect, and as such may take more time than you initailly bargained for.
 
-***All that being said,*** Quantum Espresso has some undeniable advantages over other computational chemistry codes:
+### All that being said, Quantum Espresso has some undeniable advantages over other computational chemistry codes:
+***1. COST:***
 
 
 
