@@ -27,8 +27,8 @@ An [example relaxation input file](https://github.com/kylayounger/So-You-Want-To
 /
 &ELECTRONS
   conv_thr = 1.0d-NUM               ! conv_thr can be low here as tight convergence isn't needed for structural verification
-  mixing_beta = NUM                 !
-  mixing_mode = 'plain'             ! 
+  mixing_beta = NUM                 ! mixing factor for self-consistency
+  mixing_mode = 'plain'             ! type of electron mixing
   mixing_ndim = 16
   electron_maxstep = 1000           ! max number of iterations in SCF cycle
   diagonalization = 'david'         ! type of diagonalization used to process electronic Hamiltonian
@@ -51,6 +51,9 @@ K_POINTS automatic
    k1 k2 k3 0 0 0
 ```
 ### Significant Parameters:
+**ibrav**
+**CELL_PARAMETERS**
+**ATOMIC_POSITIONS**
 
 ## Submission File Structure:
 ```
@@ -83,3 +86,4 @@ mpirun -np ${NTASKS} pw.x -npool ${NPOOL} < NAME_relax.in >> NAME_relax.out     
 echo "Completed RELAX: $(date)"    ! written to .out file
 ```
 ### Significant Parameters:
+**NPOOL**
