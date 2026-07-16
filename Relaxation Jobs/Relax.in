@@ -1,46 +1,85 @@
 &CONTROL
-  calculation = 'relax'             ! designates RELAX as the type of job to run
-  prefix = 'NAME'                   ! labels and collects data associated with this job
-  outdir = './tmp'                  ! where wavefunctions and other data is stored (directory must be created before running job)
-  pseudo_dir ='/path/to/pseuds'
+  calculation = 'relax'
+  prefix = 'bto_2x2x2_perfect'
+  outdir = './tmp'
+  pseudo_dir ='/home/kylay/scratch/BTO/psueds'
   tstress = .true.
   tprnfor = .true.
   etot_conv_thr = 1.0d-4  ! Ry
   forc_conv_thr = 1.0d-3  ! Ry/au
-  nstep = 500                       ! max number of optimization steps allowed in job
-  restart_mode = 'from_scratch'     !'from_scratch' = completly restarts, 'restart' = continue from where last job finished
+  nstep = 500
 /
 &SYSTEM
-  ibrav = 0                         ! cell type; 0 = free cell (determined by CELL_PARAMETERS)
-  nat = NUM                         ! total number of atoms in your base cell/supercell
-  ntyp = NUM                        ! total number of elements in your system
-  ecutwfc = NUM                     ! kinetic energy cutoff for wfcs
-  ecutrho = NUM                     ! kinetic energy cutoff for charge density, 4*ecutwfc is default
-  occupations = 'smearing'          ! 'smearing' = smeared electrons for metals, 'fixed' = insulator with a bandgap (smearing converges faster, but fixed is needed for Ph.x)
-  smearing = 'mv'                   ! type of smearing used
-  degauss = NUM                     ! gaussian spreading in Brillouin zone integration
+  ibrav = 0
+  nat = 40
+  ntyp = 3
+  ecutwfc = 60
+  ecutrho = 600
+  occupations = 'smearing'
+  smearing = 'mv'
+  degauss = 0.005
 /
 &ELECTRONS
-  conv_thr = 1.0d-NUM               ! conv_thr can be low here as tight convergence isn't needed for structural verification
-  mixing_beta = NUM                 !
-  mixing_mode = 'plain'             ! 
+  conv_thr = 1.0d-6
+  mixing_beta = 0.4
+  mixing_mode = 'plain'
   mixing_ndim = 16
-  electron_maxstep = 1000           ! max number of iterations in SCF cycle
-  diagonalization = 'david'         ! type of diagonalization used to process electronic Hamiltonian
+  electron_maxstep = 1000
+  diagonalization = 'david'
 /
 &IONS
 /
 ATOMIC_SPECIES
-    ATOM  ATOMIC_MASS  FILENAME     ! links to your pseudopotential files 
-    ATOM  ATOMIC_MASS  FILENAME     ! all atom types in your cell must have a pseudopotential file listed here
+    Ba  137.327  Ba.pbe-spn-kjpaw_psl.1.0.0.UPF
+    Ti   47.867  Ti.pbe-spn-kjpaw_psl.1.0.0.UPF
+    O    15.999  O.pbe-n-kjpaw_psl.1.0.0.UPF
 
 CELL_PARAMETERS angstrom
-    x    0.0    0.0                 ! dimensions of your unit cell/supercell (only needed for ibrav = 0)
-    0.0    y    0.0
-    0.0    0.0    z
+    7.98400000    0.00000000    0.00000000
+    0.00000000    7.98400000    0.00000000
+    0.00000000    0.00000000    8.07200000
 
-ATOMIC_POSITIONS crystal
-! Insert FRACTIONAL atomic positions here
+ATOMIC_POSITIONS {crystal}
+    Ba   0.000  0.000  0.000
+    Ba   0.000  0.000  0.500
+    Ba   0.000  0.500  0.000
+    Ba   0.000  0.500  0.500
+    Ba   0.500  0.000  0.000
+    Ba   0.500  0.000  0.500
+    Ba   0.500  0.500  0.000
+    Ba   0.500  0.500  0.500
+    Ti   0.250  0.250  0.241
+    Ti   0.250  0.250  0.741
+    Ti   0.250  0.750  0.241
+    Ti   0.250  0.750  0.741
+    Ti   0.750  0.250  0.241
+    Ti   0.750  0.250  0.741
+    Ti   0.750  0.750  0.241
+    Ti   0.750  0.750  0.741
+    O    0.250  0.250  0.008
+    O    0.250  0.250  0.508
+    O    0.250  0.750  0.008
+    O    0.250  0.750  0.508
+    O    0.750  0.250  0.008
+    O    0.750  0.250  0.508
+    O    0.750  0.750  0.008
+    O    0.750  0.750  0.508
+    O    0.250  0.000  0.2575
+    O    0.250  0.000  0.7575
+    O    0.250  0.500  0.2575
+    O    0.250  0.500  0.7575
+    O    0.750  0.000  0.2575
+    O    0.750  0.000  0.7575
+    O    0.750  0.500  0.2575
+    O    0.750  0.500  0.7575
+    O    0.000  0.250  0.2575
+    O    0.000  0.250  0.7575
+    O    0.000  0.750  0.2575
+    O    0.000  0.750  0.7575
+    O    0.500  0.250  0.2575
+    O    0.500  0.250  0.7575
+    O    0.500  0.750  0.2575
+    O    0.500  0.750  0.7575
 
 K_POINTS automatic
-   k1 k2 k3 0 0 0
+   3 3 3  0 0 0
