@@ -3,7 +3,7 @@ Quantum Espresso can be a powerful tool for material modelling - with the right 
 
 ## Table of Contents 
 1. [Quantum Espresso: Overview from a Computational Chemist's Perspective](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Quantum%20Espresso%3A%20Overview%20from%20a%20Computational%20Chemist's%20Perspective/README.md)
-2. Relaxation Jobs
+2. [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Relaxation%20Jobs)
 3. Self-Consistent Field (SCF) Jobs
 4. Density of States (DOS) Jobs
 5. Projected Density of States (PDOS) Jobs
