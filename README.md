@@ -11,4 +11,4 @@ Quantum Espresso can be a powerful tool for material modelling - with the right 
 7. [Bands Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Bands%20Jobs)
 8. [Phonon Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Phonon%20Jobs)
 9. [Dynamical Matrix (dynmat) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Dynamical%20Matrix%20(dynmat)%20Jobs)
-10. [Combining Jobs (Pipeline)]()
+10. [Combining Jobs (Pipeline)](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Combining%20Jobs%20(Pipeline))
