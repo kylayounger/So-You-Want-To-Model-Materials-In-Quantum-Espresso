@@ -1,4 +1,5 @@
 # Relaxation Jobs
+An example relaxation input file is attached for your reference (2x2x2 Barium Titanate Supercell).
 
 ## Input File Structure:
 ```
