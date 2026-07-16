@@ -1,6 +1,6 @@
 # Relaxation Jobs
 
-
+## Input File Structure:
 ```
 &CONTROL
   calculation = 'relax'             ! designates RELAX as the type of job to run
@@ -48,4 +48,7 @@ ATOMIC_POSITIONS crystal
 
 K_POINTS automatic
    k1 k2 k3 0 0 0
+```
+## Submission File Structure:
+```
 ```
