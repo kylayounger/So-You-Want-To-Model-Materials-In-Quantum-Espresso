@@ -52,7 +52,9 @@ K_POINTS automatic
 ```
 ### Significant Parameters:
 **ibrav**
+
 **CELL_PARAMETERS**
+
 **ATOMIC_POSITIONS**
 
 ## Submission File Structure:
