@@ -1,5 +1,5 @@
 # Relaxation Jobs
-An example relaxation input file is attached for your reference (2x2x2 Barium Titanate Supercell).
+An [example relaxation input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.in) is attached for your reference (2x2x2 Barium Titanate Supercell).
 
 ## Input File Structure:
 ```
