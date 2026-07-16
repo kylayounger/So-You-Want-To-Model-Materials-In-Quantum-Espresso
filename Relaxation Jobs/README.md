@@ -50,6 +50,8 @@ ATOMIC_POSITIONS crystal
 K_POINTS automatic
    k1 k2 k3 0 0 0
 ```
+### Significant Parameters:
+
 ## Submission File Structure:
 ```
 #!/bin/bash
@@ -80,3 +82,4 @@ mpirun -np ${NTASKS} pw.x -npool ${NPOOL} < NAME_relax.in >> NAME_relax.out     
 
 echo "Completed RELAX: $(date)"    ! written to .out file
 ```
+### Significant Parameters:
