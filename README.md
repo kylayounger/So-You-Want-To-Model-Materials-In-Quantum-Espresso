@@ -6,7 +6,7 @@ Quantum Espresso can be a powerful tool for material modelling - with the right 
 2. [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Relaxation%20Jobs)
 3. [Self-Consistent Field (SCF) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/README.md)
 4. [Density of States (DOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Density%20of%20States%20(DOS)%20Jobs/README.md)
-5. [Projected Density of States (PDOS) Jobs]()
+5. [Projected Density of States (PDOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs)
 6. [Non-Self-Consistent-Field (NSCF) Jobs]()
 7. [Bands Jobs]()
 8. [Phonon (ph.x) Jobs]()
