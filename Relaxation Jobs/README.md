@@ -68,7 +68,7 @@ K_POINTS automatic
 > 
 > ibrav = 14, Triclinic
 
-**CELL_PARAMETERS** - for free geometry cells (ibrav = 0), you must specify the lattice parameters you wish to implement. This is done in the CELL_PARAMETERS block, and are generally sourced from experimental values. It should be noted that CELL_PARAMETERS account for the *total* lattice parameter if your supercell, *not* the lattice parameter of your unit cell. 
+**CELL_PARAMETERS** - for free geometry cells (ibrav = 0), you must specify the lattice parameters you wish to implement. This is done in the CELL_PARAMETERS block, and is generally sourced from experimental values. It should be noted that CELL_PARAMETERS account for the *total* lattice parameter if your supercell, *not* the lattice parameter of your unit cell. 
 
 For example, for a 2x2x2 Tetragonal Barium Titanate Cell, I would list the unit cell parameters (a, b, c) x2:
 > CELL_PARAMETERS angstrom
