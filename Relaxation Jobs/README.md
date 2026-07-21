@@ -57,7 +57,7 @@ K_POINTS automatic
    k1 k2 k3 0 0 0
 ```
 ### Significant Parameters:
-**ibrav**
+**ibrav** - this is the Bravais Lattice index of your unit cell (also called the crystal space group). ibrav inputs are integers from 0-14, each denoting a different Bravais Lattice type. By selecting one of these options, Quantum Espresso will use pre-set Bravais Lattice constants to model your geometry:
 
 **CELL_PARAMETERS**
 
