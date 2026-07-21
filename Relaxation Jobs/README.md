@@ -79,7 +79,9 @@ For example, for a 2x2x2 Tetragonal Barium Titanate Cell, I would list the unit 
 > 
 > 0.0 0.0 2c
 
-**ATOMIC_POSITIONS**
+**ATOMIC_POSITIONS** - the .xyz geometry you wish to optimize. These are generally made in avogadro (or similar builder programs) and imported to the input file. The unit of these positions can be changed using the modifier next to the ATOMIC_POSITIONS header.
+
+For best results, ***your atomic positions MUST be in fractional coordinates!!*** This is because Quantum Espresso . This is especially important for systems with low internal symmetry (such as tetragonal unit cells, vacancies, etc) as Quantum Espresso's less-robust cartesian processing will likely lead to job failure or unreasonable geometries.
 
 ## Submission File Structure:
 ```
@@ -112,4 +114,8 @@ mpirun -np ${NTASKS} pw.x -npool ${NPOOL} < NAME_relax.in >> NAME_relax.out     
 echo "Completed RELAX: $(date)"    ! written to .out file
 ```
 ### Significant Parameters:
-**NPOOL**
+**NPOOL** - dictates how the k-point grid is divided into independant processing pools. This is an important part of the parallelization of your job, and can greatly increase/decrease the efficiency of your job submission. To find the correct NPOOL integer for your geometry, you factor the number of irreducible k-points in your calculation to find an appropraite division of tasks. 
+
+For example, if your system has 40 irreducible k-points, possible NPOOL numbers are 1, 2, 4, 5, 8, 10, 20.
+
+The number of irreducible k-points can be found by searching 'number of k points' in the relax.out file; unfortunatly, this means you have to guess NPOOL upon your first job submission. When in doubt, NPOOL = 1 will always run successfully, but may be time consuming.
