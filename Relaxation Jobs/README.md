@@ -81,7 +81,7 @@ For example, for a 2x2x2 Tetragonal Barium Titanate Cell, I would list the unit 
 
 **ATOMIC_POSITIONS** - the .xyz geometry you wish to optimize. These are generally made in avogadro (or similar builder programs) and imported to the input file. The unit of these positions can be changed using the modifier next to the ATOMIC_POSITIONS header.
 
-For best results, ***your atomic positions MUST be in fractional coordinates!!*** A detailed explaination is provided [here](). Fractional coordinates are especially important for systems with low internal symmetry (such as tetragonal unit cells, vacancies, etc) as Quantum Espresso's less-robust cartesian processing will likely lead to job failure or unreasonable geometries.
+For best results, ***your atomic positions MUST be in fractional coordinates!!*** A detailed explaination is provided [here](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Why%20Fractional%20Coordinates%3F). Fractional coordinates are especially important for systems with low internal symmetry (such as tetragonal unit cells, vacancies, etc) as Quantum Espresso's less-robust cartesian processing will likely lead to job failure or unreasonable geometries.
 
 ## Submission File Structure:
 ```
