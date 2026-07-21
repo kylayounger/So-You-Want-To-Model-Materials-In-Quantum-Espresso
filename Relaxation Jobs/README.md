@@ -59,24 +59,24 @@ K_POINTS automatic
 ### Significant Parameters:
 **ibrav** - this is the Bravais Lattice index of your unit cell (also called the crystal space group). ibrav inputs are integers from 0-14, each denoting a different Bravais Lattice type. By selecting one of these options, Quantum Espresso will use pre-set Bravais Lattice constants to model your geometry:
 > ibrav = 0, free geometry, lattice specified in CELL_PARAMETERS
-
+> 
 > ibrav = 1, Cubic P (sc)
-
+> 
 > ibrav = 2, Cubic F (fcc)
-
+> 
 > ...
-
+> 
 > ibrav = 14, Triclinic
 
 **CELL_PARAMETERS** - for free geometry cells (ibrav = 0), you must specify the lattice parameters you wish to implement. This is done in the CELL_PARAMETERS block, and are generally sourced from experimental values. It should be noted that CELL_PARAMETERS account for the *total* lattice parameter if your supercell, *not* the lattice parameter of your unit cell. 
 
 For example, for a 2x2x2 Tetragonal Barium Titanate Cell, I would list the unit cell parameters (a, b, c) x2:
 > CELL_PARAMETERS angstrom
-
+> 
 > 2a 0.0 0.0
-
+> 
 > 0.0 2b 0.0
-
+> 
 > 0.0 0.0 2c
 
 **ATOMIC_POSITIONS**
