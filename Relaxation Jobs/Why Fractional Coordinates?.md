@@ -8,4 +8,4 @@ Where: $\vec{r}$ are the Cartesian coordinates, $x, y, z$ are the Fractional coo
 
 ## Why does Quantum Espresso process Fractional Coordinates differently?
 
-$$\vec{r_{frac}} = A^{-1} \vec{r_{cart}}$$
+$$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
