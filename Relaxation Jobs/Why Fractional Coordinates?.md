@@ -66,7 +66,7 @@ Where r is the real space position vector, G is the reciprocal lattice vectors, 
 
 Quantum Espresso sets up this FTT grid using fractional coordinates, and many key parameters (kinetic energy, exchange-correlation, Hartree potential) are evaluated using this grid. Similar floating-point errors plague the FTT grid when converting from cartesian to fractional coordinates, and can affect output quantities moving into subsequent calculations.
 
-## Modelling Fractional Coordinates: VESTA  and Python
+## Modelling Fractional Coordinates: VESTA and Python
 
 By default, most molecular modelling programs will write atomic coordinates in XYZ cartesian coordinates. This is easy enough to convert to fractional coordinates using a Python script - however, there are a few quirks you should know about generating your cartesian geometry before converting.
 
