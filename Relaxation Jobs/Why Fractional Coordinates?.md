@@ -50,7 +50,21 @@ By default, most molecular modelling programs will write atomic coordinates in X
 
 At this point, you may notice that the .xyz file displayed in the VESTA terminal lists significantly more atoms than your supercell should contain (ex. 2x2x2 cell Barium Titanate should read 40 atoms, but at this stage will read 71 atoms in VESTA). This is because VESTA's default boundaries *include both faces of the supercell*, while convention only includes one. This means that any atom sitting on the boundary of your supercell will be drawn twice, and listed as two seperate positions in VESTA's terminal output. Thankfully, there is an easy way to fix this:
 
-> 4. 
+> 4. Go to the in-window Style menu, and click the 'Boundary...' button
+>    
+>    a. Under the 'Range of fractional coordinates', look for the x(max), y(max), z(max) fields
+> 
+>    b. Whatever integer value these fields currently display, decrease is *slightly* to a decimal (ex. if x(max) says 1, decrease it to 0.99); this will drop the maximum boundary just enough to exclude the duplicated atoms from the .xyz atom count
+> 
+>    c. Click 'Apply', then 'Okay'
+>
+> 5. To save, go to File > Export Data
+>    
+>    a. Name your file and double-check that XYZ format is selected
+> 
+>    b. Save, and you're done!
+
+This will generate a cartesian .xyz that can be converted into fractional coordinates.
 
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
