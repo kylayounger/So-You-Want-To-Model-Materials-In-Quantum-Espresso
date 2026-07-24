@@ -4,7 +4,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
 4. [Why Fractional Coordinates?]()
-5. [Example Relaxation Input File]()
+5. [Example Relaxation Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.in)
 
 ## Relaxation Job Basics
 **Purpose:** To verify and stabilize atomic geometries. Generally conducted before calculating the electronic structure of a given geometry to ensure it is physically reasonable.
