@@ -29,16 +29,26 @@ By default, most molecular modelling programs will write atomic coordinates in X
 
 > 1. Open your chosen .cif file in VESTA
 > 2. Go to Edit > Edit Bonds
->    a. For each bond type listed, click it and select 'Do not search atoms beyond the boundary' under 'Boundary Mode'; this step allows better   visualization of which atoms are actually being modelled
->    b. Click 'Apply', then 'Okay'
-> 3. Go to Edit > Edit Data > Unit Cell...
->    a. Check that the selected symmetry group listed under 'System' matches the crystal you are modelling; if not, change this to match
->    b. Check that the lattice parameters match the the unit cell lengths of the crystal you are modelling; if not, change this to match
->    c. Click the 'Transform' button; this window allows you to build supercells from your .cif unit cell
->        i. Under 'Rotation Matrix', change the intergers (non-zeros) to match the dimensions of the supercell you want to build
->        ii. Click 'Okay', 'Yes', 'Add new equivalent positions to a list of symmetry operations', 'Okay'
->    d. Click 'Apply' and 'Okay'; this larger menu often gets pushed behind other windows so make sure you find it!
 >    
+>    a. For each bond type listed, click it and select 'Do not search atoms beyond the boundary' under 'Boundary Mode'; this step allows better   visualization of which atoms are actually being modelled
+> 
+>    b. Click 'Apply', then 'Okay'
+> 
+> 3. Go to Edit > Edit Data > Unit Cell...
+>    
+>    a. Check that the selected symmetry group listed under 'System' matches the crystal you are modelling; if not, change this to match
+> 
+>    b. Check that the lattice parameters match the the unit cell lengths of the crystal you are modelling; if not, change this to match
+> 
+>    c. Click the 'Transform' button; this window allows you to build supercells from your .cif unit cell
+> 
+>        i. Under 'Rotation Matrix', change the intergers (non-zeros) to match the dimensions of the supercell you want to build
+> 
+>        ii. Click 'Okay', 'Yes', 'Add new equivalent positions to a list of symmetry operations', 'Okay'
+> 
+>    d. Click 'Apply' and 'Okay'; this larger menu often gets pushed behind other windows so make sure you find it!
+>
+> 4.
 
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
