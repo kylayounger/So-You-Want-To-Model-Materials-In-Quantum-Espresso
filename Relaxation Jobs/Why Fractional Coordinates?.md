@@ -44,6 +44,10 @@ This problem doesn't occur in fractional coordinates, as the positions are exact
 
 $$ S \cdot \tau_i = \tau_j + n $$
 
+Where S is a given symmetry operation, $\tau$ is given fractional coordinate, and n is an integer vector. Essentially, this equation checks if applying a symmetry operation S to fractional coordinate $\tau$ will reult in a translation by integer vector n. 
+
+This vector n defines the spacing between unit cells; it specifies the offset in position between a position in cell 0 and cell 1, and must be exact. However, converting from cartesian to fractional coordinates using $A^{-1}$ can result in small floating-point errors, leading to a slightly different value of n being produced by *sym_base.f90*. This can result in *sym_base.f90* identifying fewer symmetry operations than actually exist, potentially leading to a break in 4-fold symmetry around the c-axis.
+
 **FTT Grid**
 
 **Supercell Construction**
