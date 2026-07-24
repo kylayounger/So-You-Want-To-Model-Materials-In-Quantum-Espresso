@@ -23,6 +23,12 @@ However, when Quantum Espresso reads Fractional coordinates the program doesn't 
 
 By default, most molecular modelling programs will write atomic coordinates in XYZ cartesian coordinates. This is easy enough to convert to fractional coordinates using a Python script - however, there are a few quirks you should know about generating your cartesian geometry before converting.
 
+**Building from a .cif file in VESTA:**
+
+.cif (Crystallographic Information) files contain essential information for modelling a specific crystal type. This information includes symmetry class, unit cell/lattice parameters, and atomic positions of the unit cell. .cif files can be obtained from online databases such as [Materials Project](https://next-gen.materialsproject.org/) or [Crystallography Open Database](https://www.crystallography.net/cod/).
+
+Once your chosen .cif file has been downloaded, open it in VESTA. 
+
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
 import numpy as np
@@ -72,6 +78,6 @@ if __name__ == "__main__":
         [ 0.000,  0.000,  NUM]   # Vector c
     ]
 
-    # Run conversion
-    convert_xyz_to_fractional("path/to/input/file", unit_cell, "path/to/output/file")
+# Run conversion
+convert_xyz_to_fractional("path/to/input/file", unit_cell, "path/to/output/file")
 ```
