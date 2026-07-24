@@ -2,7 +2,7 @@
 ### Table of Contents
 1. [What are Fractional Coordinates?](#what-are-fractional-coordinates)
 2. [Why does Quantum Espresso process Fractional Coordinates differently?](#why-does-quantum-espresso-process-fractional-coordinates-differently)
-3. [Modelling Fractional Coordinates: VESTA and Python](#modelling-fractional-coordinates-vesta-and-python)
+3. [Modelling Fractional Coordinates: VESTA and Python](#modelling-fractional-coordinates--vesta-and-python)
 
 ## What are Fractional Coordinates?
 Fractional coordinates list the positions of atoms as fractions of the lattice vectors, and are always decimal values between 0-1. 
