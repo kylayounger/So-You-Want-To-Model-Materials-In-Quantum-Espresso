@@ -38,6 +38,7 @@ By default, most molecular modelling programs will write atomic coordinates in X
 >        i. Under 'Rotation Matrix', change the intergers (non-zeros) to match the dimensions of the supercell you want to build
 >        ii. Click 'Okay', 'Yes', 'Add new equivalent positions to a list of symmetry operations', 'Okay'
 >    d. Click 'Apply' and 'Okay'; this larger menu often gets pushed behind other windows so make sure you find it!
+>    
 
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
