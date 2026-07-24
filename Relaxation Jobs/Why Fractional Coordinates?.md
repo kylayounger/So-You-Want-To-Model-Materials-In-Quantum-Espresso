@@ -47,8 +47,10 @@ By default, most molecular modelling programs will write atomic coordinates in X
 >        ii. Click 'Okay', 'Yes', 'Add new equivalent positions to a list of symmetry operations', 'Okay'
 > 
 >    d. Click 'Apply' and 'Okay'; this larger menu often gets pushed behind other windows so make sure you find it!
->
-> 4.
+
+At this point, you may notice that the .xyz file displayed in the VESTA terminal lists significantly more atoms than your supercell should contain (ex. 2x2x2 cell Barium Titanate should read 40 atoms, but at this stage will read 71 atoms in VESTA). This is because VESTA's default boundaries *include both faces of the supercell*, while convention only includes one. This means that any atom sitting on the boundary of your supercell will be drawn twice, and listed as two seperate positions in VESTA's terminal output. Thankfully, there is an easy way to fix this:
+
+> 4. 
 
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
