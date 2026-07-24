@@ -52,7 +52,7 @@ This vector n defines the spacing between unit cells; it specifies the offset in
 
 The Fast Fourier Transform (FTT) grid is responsible for converting wavefunctions/charge densities from real space to reciprocal space: 
 
-$$ \rho(G) = \int_{\Omega} \ \rho{r} \ e^{iG \cdot r} dr$$
+$$ \rho(G) = \int_{\Omega} \rho(r) \ e^{iG \cdot r} dr$$
 
 And from reciprocal space to real space:
 
