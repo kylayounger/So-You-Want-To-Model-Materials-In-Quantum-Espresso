@@ -1,4 +1,12 @@
 # Relaxation Jobs
+### Table of Contents
+1. [Relaxation Job Basics](#relaxation-job-basics)
+2. [Input File Structure](#input-file-structure)
+3. [Submission File Structure](#submission-file-structure)
+4. [Why Fractional Coordinates?]()
+5. [Example Relaxation Input File]()
+
+## Relaxation Job Basics
 **Purpose:** To verify and stabilize atomic geometries. Generally conducted before calculating the electronic structure of a given geometry to ensure it is physically reasonable.
 
 **Package:** pw.x
