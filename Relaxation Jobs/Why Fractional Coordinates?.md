@@ -9,10 +9,10 @@ Where: $\vec{r}$ are the Cartesian coordinates, $x, y, z$ are the Fractional coo
 
 Demonstrated another way:
 ```
-Ba 0.000 0.000 0.000     ! a(0.000), b(0.000), c(0.000)
-Ti 0.250 0.250 0.250     ! a(0.250), b(0.250), c(0.250)
+    Ba 0.000 0.000 0.000     ! a(0.000), b(0.000), c(0.000)
+    Ti 0.250 0.250 0.250     ! a(0.250), b(0.250), c(0.250)
 ```
-
+Fractional coordinates provide distinct advantages in symmetry representations and non-orthogonal handling. However, fractional coordinates are more difficult to interpret at a glance so are less frequently used.
 
 ## Why does Quantum Espresso process Fractional Coordinates differently?
 
