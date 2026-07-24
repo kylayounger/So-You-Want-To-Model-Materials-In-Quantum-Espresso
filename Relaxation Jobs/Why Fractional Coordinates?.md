@@ -52,7 +52,7 @@ This vector n defines the spacing between unit cells; it specifies the offset in
 
 The Fast Fourier Transform (FTT) grid is responsible for converting wavefunctions/charge densities between real space and reciprocal space. 
 
-$$ \rho(r) = (1/\Omega) \Sigma_G \rho(G) e^{iG \cdot r} $$
+$$ \rho(r) = (1/\Omega) \sum_G \rho(G) e^{iG \cdot r} $$
 
 
 ## Modelling Fractional Coordinates: VESTA  and Python
