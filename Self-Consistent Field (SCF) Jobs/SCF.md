@@ -10,6 +10,12 @@
 
 ## SCF Job Basics
 
+**Purpose:**
+
+**Package:**
+
+**Resource/Time Usage:**
+
 ## Input File Structure
 
 ## Submission File Structure
