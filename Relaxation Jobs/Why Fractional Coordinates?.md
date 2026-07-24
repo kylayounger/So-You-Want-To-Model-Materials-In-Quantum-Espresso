@@ -2,7 +2,7 @@
 ### Table of Contents
 1. [What are Fractional Coordinates?](#what-are-fractional-coordinates)
 2. [Why does Quantum Espresso process Fractional Coordinates differently?](#why-does-quantum-espresso-process-fractional-coordinates-differently)
-3. [Modelling Fractional Coordinates: VESTA and Python](#modelling-fractional-coordinates--vesta-and-python)
+3. [Modelling Fractional Coordinates in VESTA and Python](#modelling-fractional-coordinates-in-vesta-and-python)
 
 ## What are Fractional Coordinates?
 Fractional coordinates list the positions of atoms as fractions of the lattice vectors, and are always decimal values between 0-1. 
@@ -66,7 +66,7 @@ Where r is the real space position vector, G is the reciprocal lattice vectors, 
 
 Quantum Espresso sets up this FTT grid using fractional coordinates, and many key parameters (kinetic energy, exchange-correlation, Hartree potential) are evaluated using this grid. Similar floating-point errors plague the FTT grid when converting from cartesian to fractional coordinates, and can affect output quantities moving into subsequent calculations.
 
-## Modelling Fractional Coordinates: VESTA and Python
+## Modelling Fractional Coordinates in VESTA and Python
 
 By default, most molecular modelling programs will write atomic coordinates in XYZ cartesian coordinates. This is easy enough to convert to fractional coordinates using a Python script - however, there are a few quirks you should know about generating your cartesian geometry before converting.
 
