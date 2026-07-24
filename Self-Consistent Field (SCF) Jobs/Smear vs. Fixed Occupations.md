@@ -1,0 +1,1 @@
+# Smear vs. Fixed Occupations
