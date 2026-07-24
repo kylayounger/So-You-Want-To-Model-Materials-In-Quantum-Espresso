@@ -5,7 +5,7 @@ Fractional coordinates list the positions of atoms as fractions of the lattice v
 
 $$\vec{r} = x\vec{a} + y\vec{b} + z\vec{c}$$
 
-Where: $\vec{r}$ are the Cartesian coordinates, $x, y, z$ are the Fractional coordinates, and $\vec{a}, \vec{b}, \vec{c}$ are the direct lattice basis vectors.
+Where: $\vec{r}$ are the cartesian coordinates, $x, y, z$ are the fractional coordinates, and $\vec{a}, \vec{b}, \vec{c}$ are the direct lattice basis vectors.
 
 Demonstrated another way:
 ```
@@ -16,21 +16,27 @@ Fractional coordinates provide distinct advantages in symmetry representations a
 
 ## Why does Quantum Espresso process Fractional Coordinates differently?
 
-When Quantum Espresso reads Cartesian coordinates, it converts them to Fractional form using the following equation:
+When Quantum Espresso reads cartesian coordinates, it converts them to fractional form using the following equation:
 
 $$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
 
-Where: $\vec{r_{frac}}$ is a Fractional coordinate, $\vec{r_{cart}}$ is a Cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
+Where: $\vec{r_{frac}}$ is a fractional coordinate, $\vec{r_{cart}}$ is a cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
 
-This transformation introduces new sources of error:
+This conversion from cartesian coordinates to fractional coordinates affects some key aspects of Relaxation calculations, especially if you're working with non-cubic cell geometries:
 
 **Periodic Boundary Conditions**
 
-For an atomic position to be considered within a unit cell of a Relax calculation, it must fall within the fractional range of [0, 1). Positions with values outside of this range (both positive and negative) are designated to adjacent cells. When writing your atomic positions in fractional coordinates, any values outside this [0, 1) range are obvious, both to you and the code, allowing it to be corrected (either by manually modifying the positions or Quantum Espresso). 
+For an atomic position to be considered within the unit cell of a Relaxation calculation, it must fall within the fractional range of [0, 1). Positions with values outside of this range (both positive and negative) are designated to adjacent cells. When writing your atomic positions in fractional coordinates, any values outside this [0, 1) range are obvious, both to you and the code, allowing it to be corrected (either by manually modifying the positions or Quantum Espresso modifying them itself). 
 
-However, in cartesian coordinates, if an atom falls within a unit or adjacent cell is determined by the  
+However, in cartesian coordinates, if an atom falls within a unit vs adjacent cell is determined by the the lattice vectors (a, b, c) and the cell angles. This means that for non-cubic cells, Quantum Espresso must perform a matrix operation to decide what cell an atom belongs to - which can lead to roundings errors and small shifts in atomic positions.
 
 **Orthonormality Issues**
+
+In the 'ideal' case of a cubic cell, the lattice parameters obey the simple rule a = b = c (cubic). However, when working with non-cubic cell types, this relationship is broken. For example, tetragonal cells obey the relationship a = b ≠ c.
+
+When Quantum Espresso converts these tetragonal cartesian coodinates using $A^{-1}$, atomic positions will be affected differently if they are scaled using a,b (the same value) or scaled using c (a slightly larger value). This is commonly seen in rounding errors; if a cartesian coordinate is rounded to fewer decimal places, this error will scale differently on the x/y vs. z planes because the 1/a and 1/c scaling factors are different.
+
+This problem doesn't occur in fractional coordinates, as the positions are exact and require no transformation.
 
 **Symmetry Detection**
 
