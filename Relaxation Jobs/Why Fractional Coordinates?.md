@@ -42,7 +42,7 @@ By default, most molecular modelling programs will write atomic coordinates in X
 > 
 >    c. Click the 'Transform' button; this window allows you to build supercells from your .cif unit cell
 > 
->        i. Under 'Rotation Matrix', change the intergers (non-zeros) to match the dimensions of the supercell you want to build
+>        i. Under 'Rotation Matrix', change the intergers to match the dimensions of the supercell you want to build
 > 
 >        ii. Click 'Okay', 'Yes', 'Add new equivalent positions to a list of symmetry operations', 'Okay'
 > 
