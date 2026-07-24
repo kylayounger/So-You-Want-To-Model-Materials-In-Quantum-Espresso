@@ -22,9 +22,18 @@ $$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
 
 Where: $\vec{r_{frac}}$ is a Fractional coordinate, $\vec{r_{cart}}$ is a Cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
 
-This introduces a source of error: 
+This introduces sources of error:
+**Orthonormality Issues**
 
-However, when Quantum Espresso reads Fractional coordinates the program doesn't need to perform a conversion - the positions are already in the internal representation that the code uses for matrix operations. This means that the error propogation that occurs during Cartesion-to-Fractional conversion is not present.
+**Symmetry Detection**
+
+**FTT Grid**
+
+**Periodic Boundary Conditions**
+
+**Supercell Construction**
+
+However, when Quantum Espresso reads Fractional coordinates the program doesn't need to perform these conversions - the positions are already in the internal representation that the code uses for matrix operations. This means that the error propogation that occurs during Cartesion-to-Fractional conversion is not present.
 
 ## Modelling Fractional Coordinates: VESTA  and Python
 
