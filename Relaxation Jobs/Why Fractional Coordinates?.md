@@ -114,3 +114,4 @@ if __name__ == "__main__":
 # Run conversion
 convert_xyz_to_fractional("path/to/input/file", unit_cell, "path/to/output/file")
 ```
+Run this script in VScode, Jupyter notebooks, or program of your choice.
