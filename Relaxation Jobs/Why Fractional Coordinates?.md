@@ -22,15 +22,19 @@ $$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
 
 Where: $\vec{r_{frac}}$ is a Fractional coordinate, $\vec{r_{cart}}$ is a Cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
 
-This introduces sources of error:
+This transformation introduces new sources of error:
+
+**Periodic Boundary Conditions**
+
+For an atomic position to be considered within a unit cell of a Relax calculation, it must fall within the fractional range of [0, 1). Positions with values outside of this range (both positive and negative) are designated to adjacent cells. When writing your atomic positions in fractional coordinates, any values outside this [0, 1) range are obvious, both to you and the code, allowing it to be corrected (either by manually modifying the positions or Quantum Espresso). 
+
+However, in cartesian coordinates, if an atom falls within a unit or adjacent cell is determined by the  
 
 **Orthonormality Issues**
 
 **Symmetry Detection**
 
 **FTT Grid**
-
-**Periodic Boundary Conditions**
 
 **Supercell Construction**
 
