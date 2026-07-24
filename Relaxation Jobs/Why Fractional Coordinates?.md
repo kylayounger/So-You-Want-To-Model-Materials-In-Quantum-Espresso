@@ -7,6 +7,13 @@ $$\vec{r} = x\vec{a} + y\vec{b} + z\vec{c}$$
 
 Where: $\vec{r}$ are the Cartesian coordinates, $x, y, z$ are the Fractional coordinates, and $\vec{a}, \vec{b}, \vec{c}$ are the direct lattice basis vectors.
 
+Demonstrated another way:
+```
+Ba 0.000 0.000 0.000     ! a(0.000), b(0.000), c(0.000)
+Ti 0.250 0.250 0.250     ! a(0.250), b(0.250), c(0.250)
+```
+
+
 ## Why does Quantum Espresso process Fractional Coordinates differently?
 
 When Quantum Espresso reads Cartesian coordinates, it converts them to Fractional form using the following equation:
