@@ -3,7 +3,7 @@
 1. [Relaxation Job Basics](#relaxation-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
-4. [Why Fractional Coordinates?]()
+4. [Why Fractional Coordinates?](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Why%20Fractional%20Coordinates%3F.md)
 5. [Example Relaxation Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.in)
 
 ## Relaxation Job Basics
