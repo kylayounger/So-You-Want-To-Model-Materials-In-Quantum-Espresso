@@ -59,6 +59,7 @@ And from reciprocal space to real space:
 $$ \rho(r) = (1/\Omega) \sum_G \ \rho(G) \ e^{iG \cdot r} $$
 
 
+
 ## Modelling Fractional Coordinates: VESTA  and Python
 
 By default, most molecular modelling programs will write atomic coordinates in XYZ cartesian coordinates. This is easy enough to convert to fractional coordinates using a Python script - however, there are a few quirks you should know about generating your cartesian geometry before converting.
