@@ -58,7 +58,9 @@ And from reciprocal space to real space:
 
 $$ \rho(r) = (1/\Omega) \sum_G \ \rho(G) \ e^{iG \cdot r} $$
 
+Where r is the real space position vector, G is the reciprocal lattice vectors, and $\Omega$ is the unit cell volume.
 
+Quantum Espresso sets up this FTT grid using fractional coordinates, and many key parameters (kinetic energy, exchange-correlation, Hartree potential) are evaluated using this grid. Similar floating-point errors plague the FTT grid when converting from cartesian to fractional coordinates, and can affect output quantities moving into subsequent calculations.
 
 ## Modelling Fractional Coordinates: VESTA  and Python
 
