@@ -22,13 +22,13 @@ $$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
 
 Where: $\vec{r_{frac}}$ is a fractional coordinate, $\vec{r_{cart}}$ is a cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
 
+However, in cartesian coordinates, if an atom falls within a unit vs adjacent cell is determined by the the lattice vectors (a, b, c) and the cell angles. This means that for non-cubic cells, Quantum Espresso must perform a matrix operation to decide what cell an atom belongs to - which can lead to roundings errors and small shifts in atomic positions.
+
 This conversion from cartesian coordinates to fractional coordinates affects some key aspects of Relaxation calculations, especially if you're working with non-cubic cell geometries:
 
 **Periodic Boundary Conditions**
 
 For an atomic position to be considered within the unit cell of a Relaxation calculation, it must fall within the fractional range of [0, 1). Positions with values outside of this range (both positive and negative) are designated to adjacent cells. When writing your atomic positions in fractional coordinates, any values outside this [0, 1) range are obvious, both to you and the code, allowing it to be corrected (either by manually modifying the positions or Quantum Espresso modifying them itself). 
-
-However, in cartesian coordinates, if an atom falls within a unit vs adjacent cell is determined by the the lattice vectors (a, b, c) and the cell angles. This means that for non-cubic cells, Quantum Espresso must perform a matrix operation to decide what cell an atom belongs to - which can lead to roundings errors and small shifts in atomic positions.
 
 **Orthonormality Issues**
 
@@ -40,11 +40,15 @@ This problem doesn't occur in fractional coordinates, as the positions are exact
 
 **Symmetry Detection**
 
+*Sym_base.f90* is the source file within Quantum Espresso that is responsible for identifying crystal structures and perofrming symmetry operations, including Brillouin zone k-point generation and real/reciprocal space rotation matrices. *Sym_base.f90* works in fractional coordinates, and checks for translational invariance using the following equation:
+
+$$ S \cdot \tau_i = \tau_j + n $$
+
 **FTT Grid**
 
 **Supercell Construction**
 
-However, when Quantum Espresso reads Fractional coordinates the program doesn't need to perform these conversions - the positions are already in the internal representation that the code uses for matrix operations. This means that the error propogation that occurs during Cartesion-to-Fractional conversion is not present.
+
 
 ## Modelling Fractional Coordinates: VESTA  and Python
 
