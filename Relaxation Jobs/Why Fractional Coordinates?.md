@@ -23,6 +23,7 @@ $$\vec{r_{frac}} = A^{-1} \cdot \vec{r_{cart}}$$
 Where: $\vec{r_{frac}}$ is a Fractional coordinate, $\vec{r_{cart}}$ is a Cartesian coordinate, and $A^{-1}$ is the inverse of the lattice matrix.
 
 This introduces sources of error:
+
 **Orthonormality Issues**
 
 **Symmetry Detection**
