@@ -15,6 +15,7 @@
 
 When modelling more complex systems (vacancies, double-well potentials, etc), you may need to run *two seperate SCF jobs to reach convergence:* a Smear SCF job and a Fixed SCF job. Specifics about this process are inlcuded below and in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md).
 
+
 **Package:** pw.x
 
 **Resource/Time Usage:** medium/high
