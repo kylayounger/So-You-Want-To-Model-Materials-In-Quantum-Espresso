@@ -82,7 +82,9 @@ Positive charges are denoted as standard integers (no + sign required). Negative
 
 More information on occupations can be found in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
 
-**nbnd** - 
+**nbnd** - this is the total number of electronic states (bands) that will be calculated in a job submission. For insulators, the convention is nbnd = # of electrons/2 (or the number of valence bands). For metals, the convention is nbnd = 1.2(# of electrons/2) (or 20% more than the number of valence bands).
+
+nbnd becomes important for future calculations that rely on a range of electron bands, such as DOS, PDOS, and Bands. Because SCF establishes the electronic structure of your material for all future calculations, it is important you choose the correct nbnd now. 
 
 **conv_thr** - 
 
