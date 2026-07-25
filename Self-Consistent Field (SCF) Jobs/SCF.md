@@ -77,7 +77,7 @@ K_POINTS automatic
 
 **occupations** - 
 
-More information on occupations can be found in [Smear vs. Fixed Occupations]()
+More information on occupations can be found in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
 
 **nbnd** - 
 
