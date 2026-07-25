@@ -4,9 +4,10 @@
 1. [SCF Job Basics](#scf-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
-4. [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
-5. [Example Smear SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear.in)
-6. [Example Fixed SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in)
+4. [Key Outputs](#key-outputs)
+5. [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
+6. [Example Smear SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear.in)
+7. [Example Fixed SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in)
 
 
 ## SCF Job Basics
@@ -73,7 +74,9 @@ K_POINTS automatic
 ```
 ### Significant Parameters:
 
-**tot_charge** - 
+**tot_charge** - this is the total charge of your system. Charges are computed during SCF jobs; no other jobs recalculate this charge, so SCF is the only job that needs this parameter to be specified.
+
+Positive charges are denoted as standard integers (no + sign required). Negative charges are denoted as negative integers (use the - sign). If not specified, tot_charge defaults to 0.
 
 **occupations** - 
 
@@ -116,3 +119,11 @@ echo "Completed SMEAR: $(date)"    ! written to .out file
 
 ### Significant Parameters:
 **NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
+
+## Key Outputs
+
+**HOMO, LUMO, and Bandgap**
+
+**Fermi Level**
+
+**Number of K-Points**
