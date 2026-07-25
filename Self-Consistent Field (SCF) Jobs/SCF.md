@@ -10,11 +10,13 @@
 
 ## SCF Job Basics
 
-**Purpose:**
+**Purpose:** To determine the ground-state energy and electron density of a system. This is accomplished by self-consistently solving the Kohn-Sham equation and constructing discrete electron orbitals. ***Essential for more advanced calculation types***
 
-**Package:**
+**Package:** pw.x
 
-**Resource/Time Usage:**
+**Resource/Time Usage:** medium/high
+
+An example Smear SCF input file and Fixed SCF input file are attached for your reference (2x2x2 Tetragonal Barium Titanate).
 
 ## Input File Structure
 
