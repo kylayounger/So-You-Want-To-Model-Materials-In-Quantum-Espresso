@@ -8,6 +8,7 @@
 5. [Example Smear SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear.in)
 6. [Example Fixed SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in)
 
+
 ## SCF Job Basics
 
 **Purpose:** To determine the ground-state energy and electron density of a system. This is accomplished by self-consistently solving the Kohn-Sham equation and constructing discrete electron orbitals. ***Essential for more advanced calculation types.***
