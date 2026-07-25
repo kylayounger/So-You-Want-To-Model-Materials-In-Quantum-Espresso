@@ -74,32 +74,33 @@ K_POINTS automatic
 ## Submission File Structure
 ```
 #!/bin/bash
-#SBATCH --job-name=NAME
-#SBATCH --account=def-ipaci
-#SBATCH --nodes=1
-#SBATCH --ntasks=192
+#SBATCH --job-name=NAME             ! this name will appear in the queue
+#SBATCH --account=ACCT              ! links to resource allocation
+#SBATCH --nodes=1                   ! number of computer nodes requested
+#SBATCH --ntasks=192                ! number of CPUs in requested node
 #SBATCH --cpus-per-task=1
-#SBATCH --time=00:30:00
-#SBATCH --mem=0
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --time=00:30:00             ! IMPORTANT
+#SBATCH --mem=0                     ! memory allocation, 0 = unlimited
+#SBATCH --output=%x_%j.out          ! writes an additional output file
+#SBATCH --error=%x_%j.err           ! writes an error file
 
-VERBOSE=TRUE
-module --force purge
+VERBOSE=TRUE                        ! ensures output files are as detailed as possible
+module --force purge                ! clears previous modules and loads in the necessary ones
 module load StdEnv/2023
 module load quantumespresso/7.5
 
 cd ${SLURM_SUBMIT_DIR}
+mkdir -p tmp                       ! creates tmp/ directory
 
 NTASKS=${SLURM_NTASKS}
-NPOOL=8                   
+NPOOL= NUM                         ! how tasks are divided up between nodes/CPUs 
 
-echo "Starting SMEAR: $(date)"
-export OMP_NUM_THREADS=1
-mpirun -np ${NTASKS} pw.x -npool ${NPOOL} < smear.in >> smear.out
+echo "Starting SMEAR: $(date)"     ! written to .out file
+export OMP_NUM_THREADS=1           ! MPI threading                 
+mpirun -np ${NTASKS} pw.x -npool ${NPOOL} < smear.in >> smear.out   ! run line
 
-echo "Completed SMEAR: $(date)"
+echo "Completed SMEAR: $(date)"    ! written to .out file
 ```
 
 ### Significant Parameters:
-
+**NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
