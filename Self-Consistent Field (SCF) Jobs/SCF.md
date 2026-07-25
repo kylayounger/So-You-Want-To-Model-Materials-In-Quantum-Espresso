@@ -77,6 +77,8 @@ K_POINTS automatic
 
 **occupations** - 
 
+More information on occupations can be found in [Smear vs. Fixed Occupations]()
+
 **nbnd** - 
 
 **conv_thr** - 
