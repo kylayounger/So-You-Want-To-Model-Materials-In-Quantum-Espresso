@@ -22,54 +22,61 @@ An example [Smear SCF input file](https://github.com/kylayounger/So-You-Want-To-
 ## Input File Structure
 ```
 &CONTROL
-    calculation = 'scf'
-    prefix = 'NAME'
-    outdir = './tmp'
-    pseudo_dir = '/home/kylay/scratch/PAW_BTO/psueds'
+    calculation = 'scf'             ! designates SCF as the type of job to run
+    prefix = 'NAME'                 ! labels and collects data associated with this job
+    outdir = './tmp'                ! where wavefunctions and other data is stored (directory must be created before running job)
+    pseudo_dir = 'path/to/pseuds'
     tprnfor = .true.
     tstress = .true.
     etot_conv_thr = 1.0d-4  ! Ry
     forc_conv_thr = 1.0d-3  ! Ry/au
-    nstep = 500
-    disk_io = 'high'
-    restart_mode = 'from_scratch'
+    nstep = 500                     ! max number of optimization steps allowed in job
+    restart_mode = 'from_scratch'   !'from_scratch' = completly restarts, 'restart' = continue from where last job finished
 /
 &SYSTEM
-    tot_charge = 2
-    ibrav = 0
-    nat = 40
-    ntyp = 3
-    ecutwfc = 60
-    ecutrho = 600
-    occupations = 'smearing'
-    smearing = 'mv'
-    degauss = 0.005
-    nbnd = 200                    ! total number of electronic bands to be modelled (more for FIXED job)
+    tot_charge = NUM                ! net electronic charge of the cell
+    ibrav = 0                       ! cell type; 0 = free cell (determined by CELL_PARAMETERS)
+    nat = NUM                       ! total number of atoms in your base cell/supercell
+    ntyp = NUM                      ! total number of elements in your system
+    ecutwfc = NUM                   ! kinetic energy cutoff for wfcs
+    ecutrho = NUM                   ! kinetic energy cutoff for charge density, 4*ecutwfc is default
+    occupations = 'smearing'        ! 'smearing' = smeared electrons for metals, 'fixed' = insulator with a bandgap
+    smearing = 'mv'                 ! only used when occupations = 'smearing'; type of smearing used
+    degauss = NUM
+    nbnd = NUM                      ! total number of electronic bands to be modelled
 /
 &ELECTRONS
-  conv_thr = 1.0d-8               ! increased convergence threshold compared to RELAX, but less than FIXED
-  mixing_beta = 0.4               ! best value for BTO
-  mixing_mode = 'plain'
+  conv_thr = 1.0d-NUM               ! if Smear: increase by ~10^2 from Relaxation; if Fixed: increase by ~ 10^2 from Smear
+  mixing_beta = NUM                 ! mixing factor for self-consistency
+  mixing_mode = 'plain'             ! type of electron mixing
   mixing_ndim = 16
-  electron_maxstep = 200
-  diagonalization = 'david'
+  electron_maxstep = 1000           ! max number of iterations in SCF cycle
+  diagonalization = 'david'         ! type of diagonalization used to process electronic Hamiltonian
 /
 ATOMIC_SPECIES
-    Ba  137.327  Ba.pbe-spn-kjpaw_psl.1.0.0.UPF
-    Ti  47.867   Ti.pbe-spn-kjpaw_psl.1.0.0.UPF
-    O   15.999   O.pbe-n-kjpaw_psl.1.0.0.UPF
+    ATOM  ATOMIC_MASS  FILENAME     ! links to your pseudopotential files 
+    ATOM  ATOMIC_MASS  FILENAME     ! all atom types in your cell must have a pseudopotential file listed here
 
 CELL_PARAMETERS angstrom
-    7.98400000    0.00000000    0.00000000
-    0.00000000    7.98400000    0.00000000
-    0.00000000    0.00000000    8.07200000
+    x    0.0    0.0                 ! dimensions of your unit cell/supercell (only needed for ibrav = 0)
+    0.0    y    0.0
+    0.0    0.0    z
 
 ATOMIC_POSITIONS crystal
-                                 ! use optimized coordinates from RELAX job
+! insert OPTIMIZED fractional coordinates from RELAXATION job here
+
 K_POINTS automatic
-    3 3 3  0 0 0
+    k1 k2 k3  0 0 0
 ```
 ### Significant Parameters:
+
+**tot_charge** - 
+
+**occupations** - 
+
+**nbnd** - 
+
+**conv_thr** - 
 
 ## Submission File Structure
 ```
