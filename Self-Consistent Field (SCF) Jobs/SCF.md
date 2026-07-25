@@ -18,6 +18,7 @@
 
 An example Smear SCF input file and Fixed SCF input file are attached for your reference (2x2x2 Tetragonal Barium Titanate).
 
+
 ## Input File Structure
 
 ## Submission File Structure
