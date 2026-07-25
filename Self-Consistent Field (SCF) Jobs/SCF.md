@@ -16,7 +16,7 @@
 
 **Resource/Time Usage:** medium/high
 
-An example Smear SCF input file and Fixed SCF input file are attached for your reference (2x2x2 Tetragonal Barium Titanate).
+An example Smear SCF input file and Fixed SCF input file are attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 
 ## Input File Structure
