@@ -21,5 +21,9 @@ An example Smear SCF input file and Fixed SCF input file are attached for your r
 
 ## Input File Structure
 
+### Significant Parameters:
+
 ## Submission File Structure
+
+### Significant Parameters:
 
