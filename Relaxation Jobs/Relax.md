@@ -99,7 +99,7 @@ For best results, ***your atomic positions MUST be in fractional coordinates!!**
 #SBATCH --nodes=1                   ! number of computer nodes requested
 #SBATCH --ntasks=192                ! number of CPUs in requested node
 #SBATCH --cpus-per-task=1
-#SBATCH --time=23:00:00             ! IMPORTANT
+#SBATCH --time=00:30:00             ! IMPORTANT
 #SBATCH --mem=0                     ! memory allocation, 0 = unlimited
 #SBATCH --output=%x_%j.out          ! writes an additional output file
 #SBATCH --error=%x_%j.err           ! writes an error file
