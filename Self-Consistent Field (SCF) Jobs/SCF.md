@@ -86,7 +86,9 @@ More information on occupations can be found in [Smear vs. Fixed Occupations](ht
 
 nbnd becomes important for future calculations that rely on a range of electron bands, such as DOS, PDOS, and Bands. Because SCF establishes the electronic structure of your material for all future calculations, it is important you choose the correct nbnd now. 
 
-**conv_thr** - 
+**conv_thr** - this is the convergence threshold for your calculation, determining when the Kohn-Sham matrix is considered to have 'converged'. For convergece to be acheived, *the estimated energy error must be less than than the conv_thr value.*
+
+A lower conv_thr corresponds to a faster calculation with a higher chance of acheiving convergence at a lower accuracy/precision. A higher conv_thr corresponds to a slower calculation with a lower chance of acheiving convergence at a higher accuracy/precision. Higher conv_thr are needed for more advanced calculations, such as phonon and atomic forces.
 
 ## Submission File Structure
 ```
