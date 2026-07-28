@@ -6,21 +6,21 @@
 3. [Submission File Structure](#submission-file-structure)
 4. [Key Outputs](#key-outputs)
 5. [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md)
-6. [Example Smear SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear.in)
+6. [Example Smeared SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared.in)
 7. [Example Fixed SCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in)
 
 ## SCF Job Basics
 
 **Purpose:** To determine the ground-state energy and electron density of a system. This is accomplished by self-consistently solving the Kohn-Sham equation and constructing discrete electron orbitals. ***Essential for more advanced calculation types.***
 
-When modelling more complex systems (vacancies, double-well potentials, etc), you may need to run *two seperate SCF jobs to reach convergence:* a Smear SCF job and a Fixed SCF job. Specifics about this process are inlcuded below and in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md).
+When modelling more complex systems (vacancies, double-well potentials, etc), you may need to run *two seperate SCF jobs to reach convergence:* a Smeared SCF job and a Fixed SCF job. Specifics about this process are inlcuded below and in [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md).
 
 
 **Package:** pw.x
 
 **Resource/Time Usage:** medium/high
 
-An example [Smear SCF input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear.in) and [Fixed SCF input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in) are attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
+An example [Smeared SCF input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared.in) and [Fixed SCF input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Fixed.in) are attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
@@ -79,7 +79,7 @@ Positive charges are denoted as standard integers (no + sign required). Negative
 
 **occupations** - this controls how electron occupation numbers are handled in your calculation. The two most important options here are 'smearing' and 'fixed'; 'smearing' for metals, and 'fixed' for insulators and semi-conductors. However, there are more factors that impact the occupations setting...
 
-More information on occupations can be found in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
+More information on occupations can be found in [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md)
 
 **nbnd** - this is the total number of electronic states (bands) that will be calculated in a job submission. For insulators, the convention is nbnd = # of electrons/2 (or the number of valence bands). For metals, the convention is nbnd = 1.2(# of electrons/2) (or 20% more than the number of valence bands).
 
