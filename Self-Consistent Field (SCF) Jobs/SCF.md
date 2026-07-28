@@ -128,6 +128,14 @@ echo "Completed SMEAR: $(date)"    ! written to .out file
 
 **HOMO, LUMO, and Bandgap**
 
+Information about the bandgap is perhaps the most important data that can be extracted directly from the scf output. The Highest Occupied Molecular Orbital (HOMO) is the highest energy state that is occupied by an electron - this is the minimum value of the bandgap. The Lowest Unoccupied Molecular Orbital (LUMO) is the lowest energy state that is unoccupied by an electron - this is the maximum value of the bandgap. The bandgap encompasses the energy values between these orbitals:
+
+$$ E_b = E_l - E_h $$
+
+Where $E_b$ is the bandgap, $E_l$ is the LUMO energy, and $E_h$ is the HOMO energy.
+
+The HOMO and LUMO energies can be found by searching 'highest' (from 'highest occupied orbital') in the scf output file.
+
 **Fermi Level**
 
 The Fermi Level is the energy level with an exact 50% probability to be occupied by an electron at any temperature.
@@ -141,3 +149,5 @@ Where $E_f$ is the Fermi Energy, $E_l$ is the LUMO energy, and $E_h$ is the HOMO
 The Fermi Level is important to know for many future calculation types, such as DOS, PDOS, and Bands.
 
 **Number of K-Points**
+
+The number of k-poinst can be found by searching 'number of k points' in the scf output file. This is an important parameter to check before moving on to NSCF and Bands calculations.
