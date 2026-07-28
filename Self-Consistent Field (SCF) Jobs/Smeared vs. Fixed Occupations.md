@@ -1,4 +1,4 @@
-# Smear vs. Fixed Occupations
+# Smeared vs. Fixed Occupations
 
 ### Table of Contents
 1. [What are Occupations?](#what-are-occupations)
