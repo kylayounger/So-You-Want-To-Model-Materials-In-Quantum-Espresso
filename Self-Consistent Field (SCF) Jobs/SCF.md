@@ -130,4 +130,14 @@ echo "Completed SMEAR: $(date)"    ! written to .out file
 
 **Fermi Level**
 
+The Fermi Level is the energy level with an exact 50% probability to be occupied by an electron at any temperature.
+
+The Fermi Level can be calculated from the HOMO/LUMO data as follows:
+
+$$ E_f = (E_l - E_h)/2 + E_h $$
+
+Where $E_f$ is the Fermi Energy, $E_l$ is the LUMO energy, and $E_h$ is the HOMO energy.
+
+The Fermi Level is important to know for many future calculation types, such as DOS, PDOS, and Bands.
+
 **Number of K-Points**
