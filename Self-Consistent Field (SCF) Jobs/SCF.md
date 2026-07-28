@@ -78,7 +78,7 @@ K_POINTS automatic
 
 Positive charges are denoted as standard integers (no + sign required). Negative charges are denoted as negative integers (use the - sign). If not specified, tot_charge defaults to 0.
 
-**occupations** - 
+**occupations** - this controls how electron occupation numbers are handled in your calculation. The two most important options here are 'smearing' and 'fixed'; 'smearing' for metals, and 'fixed' for insulators and semi-conductors. However, there are more factors that impact the occupations setting...
 
 More information on occupations can be found in [Smear vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smear%20vs.%20Fixed%20Occupations.md)
 
