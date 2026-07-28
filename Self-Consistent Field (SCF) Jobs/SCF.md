@@ -134,7 +134,7 @@ The Fermi Level is the energy level with an exact 50% probability to be occupied
 
 The Fermi Level can be calculated from the HOMO/LUMO data as follows:
 
-$$ E_f = (E_l - E_h)/2 + E_h $$
+$$ E_f = \left((E_l - E_h)/2\right) + E_h $$
 
 Where $E_f$ is the Fermi Energy, $E_l$ is the LUMO energy, and $E_h$ is the HOMO energy.
 
