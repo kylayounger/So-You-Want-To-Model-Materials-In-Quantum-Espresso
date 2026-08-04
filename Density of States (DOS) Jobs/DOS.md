@@ -1,10 +1,10 @@
 # Density of States (DOS) Jobs
 
 ### Table of Contents
-1. [DOS Job Basics]()
-2. [Input File Structure]()
-3. [Submission File Structure]()
-4. [Plotting DOS]()
+1. [DOS Job Basics](#dos-job-basics)
+2. [Input File Structure](#input-file-structure)
+3. [Submission File Structure](#submisison-file-structure)
+4. [Plotting DOS](#plotting-dos)
 
 ## DOS Job Basics
 
