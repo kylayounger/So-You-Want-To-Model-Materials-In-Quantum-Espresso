@@ -112,10 +112,11 @@ This will generate a cartesian .xyz that can be converted into fractional coordi
 **Cartesian to Fractional Coordinates Conversion Script:**
 ```
 import numpy as np
-# Must change CELL PARAMETERS to match the lattice parameters of the cell/supercell!
+
+# IMPORTANT: lattice_vectors must match the SUPERCELL dimensions, not the unit cell.
 
 def convert_xyz_to_fractional(xyz_filename, lattice_vectors, output_filename):
-    M = np.array(lattice_vectors).T
+    M = np.array(lattice_vectors).T  # columns are lattice vectors
     try:
         M_inv = np.linalg.inv(M)
     except np.linalg.LinAlgError:
@@ -129,20 +130,38 @@ def convert_xyz_to_fractional(xyz_filename, lattice_vectors, output_filename):
     except ValueError:
         raise ValueError("Invalid .xyz format: Line 1 must state the number of atoms.")
 
-    comment = lines[1].rstrip('\n')
     atom_data = lines[2:2 + num_atoms]
 
     fractional_atoms = []
+    seen = {}
+    duplicates = []
 
-    for line in atom_data:
+    for i, line in enumerate(atom_data):
         parts = line.split()
         if len(parts) < 4:
             continue
 
         element = parts[0]
         cartesian_coords = np.array([float(parts[1]), float(parts[2]), float(parts[3])])
-        fractional_coords = np.dot(M_inv, cartesian_coords)
+        fractional_coords = np.dot(M_inv, cartesian_coords) % 1.0
         fractional_atoms.append((element, *fractional_coords))
+        key = (element, round(fractional_coords[0], 5),
+                        round(fractional_coords[1], 5),
+                        round(fractional_coords[2], 5))
+        if key in seen:
+            duplicates.append((i + 1, seen[key] + 1, element, fractional_coords))
+        else:
+            seen[key] = i
+
+    # Report duplicates before writing
+    if duplicates:
+        print(f"WARNING: {len(duplicates)} duplicate atom(s) found after reduction!")
+        for atom_num, orig_num, elem, coords in duplicates:
+            print(f"  Atom {atom_num} duplicates atom {orig_num}: "
+                  f"{elem} at ({coords[0]:.6f}, {coords[1]:.6f}, {coords[2]:.6f})")
+        print("  Check that lattice_vectors matches the SUPERCELL, not the unit cell.")
+    else:
+        print(f"No duplicates found. {len(fractional_atoms)} unique atoms written.")
 
     with open(output_filename, 'w') as f:
         f.write(f"{len(fractional_atoms)}\n")
@@ -150,15 +169,22 @@ def convert_xyz_to_fractional(xyz_filename, lattice_vectors, output_filename):
         for element, fx, fy, fz in fractional_atoms:
             f.write(f"{element:2s} {fx:.8f} {fy:.8f} {fz:.8f}\n")
 
-#CELL PARAMETERS
+    print(f"Output written to: {output_filename}")
+
+
+#CELL_PARAMETERS
 if __name__ == "__main__":
-    unit_cell = [
-        [ NUM,  0.000,  0.000],  # Vector a
-        [ 0.000,  NUM,  0.000],  # Vector b
-        [ 0.000,  0.000,  NUM]   # Vector c
+
+    supercell = [
+        [NUM,  0.000,  0.000],   
+        [ 0.000, NUM,  0.000],   
+        [ 0.000,  0.000, NUM]    
     ]
 
-# Run conversion
-convert_xyz_to_fractional("path/to/input/file", unit_cell, "path/to/output/file")
+    convert_xyz_to_fractional(
+        xyz_filename   = "path/to/source/file.xyz",
+        lattice_vectors = supercell,
+        output_filename = "path/to/save/file.xyz"
+    )
 ```
 Run this script in VScode, Jupyter notebooks, or program of your choice.
