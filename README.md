@@ -8,7 +8,7 @@ Quantum Espresso can be a powerful tool for material modelling - with the right 
 4. [Density of States (DOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Density%20of%20States%20(DOS)%20Jobs/DOS.md)
 5. [Projected Density of States (PDOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs)
 6. [Non-Self-Consistent-Field (NSCF) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs)
-7. [Bands Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Bands%20Jobs)
+7. [Bands Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Bands%20Jobs/bands.md)
 8. [Phonon Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Phonon%20Jobs)
 9. [Dynamical Matrix (dynmat) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Dynamical%20Matrix%20(dynmat)%20Jobs/dynmat.md)
 10. [Combining Jobs (Pipeline)](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Combining%20Jobs%20(Pipeline))
