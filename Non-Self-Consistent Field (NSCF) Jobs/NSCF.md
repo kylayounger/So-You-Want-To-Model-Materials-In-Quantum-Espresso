@@ -26,7 +26,7 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
     tprnfor = .true.                     ! calculates forces
 /
 &SYSTEM
-    ibrav = 0
+    ibrav = 0                            ! cell type; must be the same as SCF
     nat = NUM                            ! total number of atoms in your base cell/supercell
     ntyp = NUM                           ! total number of elements in your system
     ecutwfc = NUM                        ! kinetic energy cutoff for wfcs
@@ -35,23 +35,26 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
     nbnd = NUM                           ! total number of electronic bands to be calculated, must be the same as SCF
 /
 &ELECTRONS
-    conv_thr = 1.0d-8
-    mixing_mode = 'plain'
-    mixing_ndim = 16
-    diagonalization = 'cg'
-    diago_full_acc = .true.
-    startingwfc = 'atomic+random'
-    startingpot = 'file'
-    electron_maxstep = 500
+    conv_thr = 1.0d-NUM                  ! can be slightly decreased from fixed SCF
+    mixing_mode = 'plain'                ! type of electron mixing
+    mixing_ndim = 16                     
+    diagonalization = 'cg'               ! type of diagonalization used; 
+    diago_full_acc = .true.              !
+    startingwfc = 'atomic+random'        !
+    startingpot = 'file'                 ! pulls starting potential from tmp/ directory
+    electron_maxstep = 500               ! max number of iterations in NSCF cycle
 /
 ATOMIC_SPECIES
-! FILL IN !
+    ATOM  ATOMIC_MASS  FILENAME     ! links to your pseudopotential files 
+    ATOM  ATOMIC_MASS  FILENAME     ! all atom types in your cell must have a pseudopotential file listed here
 
 CELL_PARAMETERS angstrom
-! FILL IN !
+    x    0.0    0.0                 ! dimensions of your unit cell/supercell (only needed for ibrav = 0)
+    0.0    y    0.0
+    0.0    0.0    z
 
 ATOMIC_POSITIONS crystal
-! FILL IN !
+! insert OPTIMIZED fractional coordinates from RELAXATION job here
 
 K_POINTS {crystal_b}                        !IMPORTANT!
 8
