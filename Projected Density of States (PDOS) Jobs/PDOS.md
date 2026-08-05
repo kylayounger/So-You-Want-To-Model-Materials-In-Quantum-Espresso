@@ -58,3 +58,142 @@ echo "Completed PROJWFC: $(date)"   ! written to .out file
 ```
 
 ## Plotting PDOS
+Single PDOS Plot:
+```
+import matplotlib.pyplot as plt
+from matplotlib import rcParamsDefault
+import numpy as np
+
+########### FERMI LEVEL ############
+Fermi_level = NUM  #in eV, CHANGE PER RUN
+
+# load data
+def data_loader(fname):
+    import numpy as np
+
+    data = np.loadtxt(fname)
+    energy = data[:, 0]
+    pdos = data[:, 1]  # ldos col, total contribution for a given orbital
+
+    return energy, pdos
+
+energy, pdos_s = data_loader('path/to/s_orbital_file')
+_, pdos_p = data_loader('path/to/p_orbital_file')
+pdos_tot = pdos_s + pdos_p
+
+# make plots
+plt.figure(figsize = (8, 4))
+plt.plot(energy, pdos_s, linewidth=0.75, color='#006699', label='s-orbital')
+plt.plot(energy, pdos_p, linewidth=0.75, color='r', label='p-orbital')
+plt.plot(energy, pdos_tot, linewidth=0.75, color='k', label='total')
+plt.yticks([])
+plt.xlabel('Energy (eV)')
+plt.ylabel('DOS')
+plt.axvline(x= Fermi_level, linewidth=0.5, color='k', linestyle=(0, (8, 10)))
+plt.xlim(5, 18)
+plt.ylim(0, )
+plt.fill_between(energy, 0, pdos_s, where=(energy < Fermi_level), facecolor='#006699', alpha=0.25)
+plt.fill_between(energy, 0, pdos_p, where=(energy < Fermi_level), facecolor='r', alpha=0.25)
+plt.fill_between(energy, 0, pdos_tot, where=(energy < Fermi_level), facecolor='k', alpha=0.25)
+# plt.text(6.5, 0.52, 'Fermi energy', fontsize= small, rotation=90)
+plt.legend(frameon=False)
+plt.show()
+```
+
+Array PDOS Plots:
+```
+import matplotlib.pyplot as plt
+from matplotlib import rcParamsDefault
+import numpy as np
+import glob
+import re
+import os
+from collections import defaultdict
+
+####### MANUAL INPUT #########
+Fermi_level = NUM   #in eV
+name = 'NAME'  #must be the same as the extracted zip folder ("NAME_pdos.zip")
+##############################
+
+###### SCEONDARY VARIABLES ########
+data_dir = 'path/to/zip/folder/%s' % name
+save_dir = 'path/to/save/folder/%s/' % name  #set to 'None' to skip saving
+##################################
+
+ORBITAL_COLOURS = {
+   's' : '#44ACEB',
+   'p' : '#EB4444',
+   'd' : '#A218E7',
+}
+
+def data_loader(fname):
+            data = np.loadtxt(fname)
+            energy = data[:, 0]
+            pdos = data[:, 1] 
+            return energy, pdos
+
+######### PULL NAME VARIABLES ###########
+pattern = re.compile(r'atm[#_](\d+)[_\(]([A-Za-z]+)\)?_*wfc[#_](\d+)[_\(]([a-z]+)\)?_?')
+
+all_entries = sorted(glob.glob(os.path.join(data_dir, '*')))
+all_files = [f for f in all_entries if pattern.search(os.path.basename(f))]
+
+if not all_files:
+   print('Looked in: %s' % data_dir)
+   print('Found %d entries there. First 10:' % len(all_entries))
+   for f in all_entries[:10]:
+      print('  ', os.path.basename(f))
+   raise FileNotFoundError('No PDOS files found in %s' % data_dir)
+
+######## SORT FILES BY ATOM NUM #######
+atoms = defaultdict(list) #atom_num -> list of (element, wfc_id, orbital, fname)
+for f in all_files:
+   match = pattern.search(os.path.basename(f))
+   if not match:
+      continue
+   atom_num, element, wfc_id, orbital = match.groups()
+   atoms[atom_num].append((element, wfc_id, orbital, f))
+
+######## LOOP OVER ATOMS ###########
+for atom_num, entries in sorted(atoms.items(), key=lambda x: int(x[0])):
+   element = entries[0][0]  #element is the same for all entires of this atom
+
+   energy = None
+   orbital_data = {}  #orbital type -> pdos array (summed if multiple wfc of same type)
+
+   for elem, wfc_id, orbital, fname in entries:
+      e, pdos = data_loader(fname)
+      if energy is None:
+         energy = e
+      if orbital in orbital_data:
+         orbital_data[orbital] = orbital_data[orbital] + pdos
+      else:
+         orbital_data[orbital] = pdos
+
+   pdos_tot = sum(orbital_data.values())
+
+   ####### PLOT (PER ATOM) #########
+   plt.figure(figsize = (8, 4))
+   for orbital, pdos in sorted(orbital_data.items()):
+       color = ORBITAL_COLOURS.get(orbital, 'gray')
+       plt.plot(energy, pdos, linewidth=0.75, color=color, label='%s-orbital' % orbital)
+       plt.fill_between(energy, 0, pdos, where=(energy < Fermi_level), facecolor=color, alpha=0.25)
+
+   plt.plot(energy, pdos_tot, linewidth=0.75, color='k', label='total')    
+   plt.fill_between(energy, 0, pdos_tot, where=(energy < Fermi_level), facecolor='k', alpha=0.25)
+  
+   plt.yticks([])
+   plt.xlabel('Energy (eV)')
+   plt.ylabel('DOS')
+   plt.axvline(x= Fermi_level, linewidth=0.5, color='k', linestyle=(0, (8, 10)))
+   plt.xlim(5, 18)
+   plt.ylim(0, )
+   plt.title('PDOS: %s, Atom #%s (%s)' % (name, atom_num, element))
+   plt.legend(frameon=False)
+
+   if save_dir:
+      os.makedirs(save_dir, exist_ok=True)
+      plt.savefig(os.path.join(save_dir, '%s_atom%s_%s' % (name, atom_num, element)))
+
+   #plt.show()
+```
