@@ -109,6 +109,12 @@ mpirun -np ${NTASKS} pw.x -npool ${NPOOL} -pd .true. < nscf.in >> nscf.out     !
 echo "Completed NSCF: $(date)"       ! written to .out file
 ```
 ### Significant Parameters:
-**-pd .true.** - 
+**-pd .true.** - this modifier enables **pencil decomposition** of the 3D Fourier Fast Transform (FFT) grid, as opposed to the default slab decomposition.
+
+In slab decomposition, only one dimension is split from the 3D FTT grid to create 'slabs'; this limits the maximum number of processors to the size of a single grid dimension (ex. in a 3x3x3 grid, you can use a maximum of 3 processors). While slab decomposition is fast, it scales poorly and can fail when faced with more complex systems.
+
+In pencil decomposition, the 3D FTT grid is split into two dimensions to form columns or rods. Pencil decomposition allows more complex 3D FFT grids to be evaluated by splitting the workload across more processor cores (ex. for a 3x3x3 grid, you can use a maximum of $3^2$ (9) processors). Pencil decomposition takes longer and as such requires additional input from the user to get Quantum Espresso to implement.
+
+I recommend using the -pd .true. modifier in all submission scripts after SCF (NSCF, bands, dos, projwfc, phonon, dynmat). 
 
 **NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
