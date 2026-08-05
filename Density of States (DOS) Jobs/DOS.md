@@ -15,7 +15,7 @@ Must be performed after a Smeared/Fixed SCF job.
 
 **Resource/Time Usage:** low
 
-An example [DOS input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
+An example [DOS input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Density%20of%20States%20(DOS)%20Jobs/dos.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
