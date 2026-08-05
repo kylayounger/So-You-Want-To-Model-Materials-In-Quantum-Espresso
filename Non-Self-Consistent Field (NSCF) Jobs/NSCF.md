@@ -118,3 +118,4 @@ In pencil decomposition, the 3D FTT grid is split into two dimensions to form co
 I recommend using the -pd .true. modifier in all submission scripts after SCF (NSCF, bands, dos, projwfc, phonon, dynmat). 
 
 **NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
+
