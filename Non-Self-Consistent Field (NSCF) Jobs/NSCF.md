@@ -18,21 +18,21 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
 
 ```
 &CONTROL
-    calculation = 'bands'
-    prefix = 'NAME'                      ! must be the same name as FIXED
-    outdir = './tmp'                     ! must be the same outdir as FIXED
-    pseudo_dir = '/home/kylay/scratch/PAW_BTO/psueds'
-    restart_mode = 'from_scratch'
-    tprnfor = .true.                     ! calculates forces (not sure if this is required)
+    calculation = 'bands'                ! designates NSCF as the type of job you want to run
+    prefix = 'NAME'                      ! labels and collects data associated with this job, must be the same name as SCF
+    outdir = './tmp'                     ! where wavefunctions and other data is stored, must be the same as SCF
+    pseudo_dir = 'path/to/pseuds'        
+    restart_mode = 'from_scratch'        !'from_scratch' = completly restarts, 'restart' = continue from where last job finished
+    tprnfor = .true.                     ! calculates forces
 /
 &SYSTEM
     ibrav = 0
-    nat = 40
-    ntyp = 3
-    ecutwfc = 60
-    ecutrho = 600
-    occupations = 'fixed'             
-    nbnd = 200                       ! must be the same as SCF
+    nat = NUM                            ! total number of atoms in your base cell/supercell
+    ntyp = NUM                           ! total number of elements in your system
+    ecutwfc = NUM                        ! kinetic energy cutoff for wfcs
+    ecutrho = NUM                        ! kinetic energy cutoff for charge density, 4*ecutwfc is default
+    occupations = 'fixed'                ! 'smearing' = smeared electrons for metals, 'fixed' = insulator with a bandgap
+    nbnd = NUM                           ! total number of electronic bands to be calculated, must be the same as SCF
 /
 &ELECTRONS
     conv_thr = 1.0d-8
