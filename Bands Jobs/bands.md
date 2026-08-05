@@ -7,6 +7,13 @@
 4. [Plotting Band Structures](#plotting-band-structures)
 
 ## Bands Job Basics
+**Purpose:**
+
+**Package:** bands.x
+
+**Resource/Time Usage:** low
+
+An example [Bands input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
