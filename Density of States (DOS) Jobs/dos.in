@@ -1,0 +1,12 @@
+&DOS
+  prefix = '2x2x2_bto_perfect'
+  outdir = './tmp'
+  fildos = 'dos_gamma.dat'
+
+  Emin = -30.0
+  Emax = 30.0
+  DeltaE = 0.005
+
+  ngauss = 0
+  degauss = 0.005
+/
