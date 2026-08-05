@@ -69,6 +69,7 @@ K_POINTS {crystal_b}                        !IMPORTANT!
   0.500  0.500  0.500  30   ! A
   0.000  0.000  0.500   1   ! Z (end point, weight=1)
 ```
+
 ## Significant Parameters:
 **diagonalization** -
 
