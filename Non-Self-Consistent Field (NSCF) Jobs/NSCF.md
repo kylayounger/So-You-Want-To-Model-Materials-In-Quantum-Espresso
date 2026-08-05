@@ -6,7 +6,9 @@
 3. [Submission File Structure](#submission-file-structure)
 
 ## NSCF Job Basics
-**Purpose:** 
+**Purpose:** to generate eigenvectors and eigenvalues of the Kohn-Sham Hamiltonian using a denser k-grid. NSCF calculations use the converged SCF charge density *without updating/recalculating it;* this is why it is so important to have an accurate and precise SCF calculation.
+
+Must be run after a fixed SCF job.
 
 **Package:** pw.x
 
