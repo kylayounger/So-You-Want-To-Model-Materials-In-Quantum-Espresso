@@ -6,6 +6,13 @@
 3. [Submission File Structure](#submission-file-structure)
 
 ## NSCF Job Basics
+**Purpose:** 
+
+**Package:** pw.x
+
+**Resource/Time Usage:** medium/high
+
+An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/nscf.in) is attached for your reference.
 
 ## Input File Structure
 
