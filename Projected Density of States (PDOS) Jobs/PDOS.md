@@ -194,6 +194,4 @@ for atom_num, entries in sorted(atoms.items(), key=lambda x: int(x[0])):
    if save_dir:
       os.makedirs(save_dir, exist_ok=True)
       plt.savefig(os.path.join(save_dir, '%s_atom%s_%s' % (name, atom_num, element)))
-
-   #plt.show()
 ```
