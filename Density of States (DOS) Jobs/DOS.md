@@ -7,6 +7,15 @@
 4. [Plotting DOS](#plotting-dos)
 
 ## DOS Job Basics
+**Purpose:** to post-process occupation and orbital information generated from SCF runs into easily graphed Density of States format. Evaluates the number of electronic states available at each energy level.
+
+Must be performed after a Smeared/Fixed SCF job.
+
+**Package:** dos.x
+
+**Resource/Time Usage:** low
+
+An example [DOS input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
