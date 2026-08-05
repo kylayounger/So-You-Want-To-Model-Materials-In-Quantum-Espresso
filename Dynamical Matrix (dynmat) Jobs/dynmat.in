@@ -1,0 +1,7 @@
+&INPUT
+   fildyn = '2x2x2_bto_perfect.dyn'        
+   asr = 'crystal'
+   filout = '2x2x2_bto_perfect.out'
+   filmol = '2x2x2_bto_perfect.mold'
+   filxsf = '2x2x2_bto_perfect.xsf'
+/
