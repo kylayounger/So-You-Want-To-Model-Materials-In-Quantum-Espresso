@@ -39,19 +39,19 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
 &ELECTRONS
     conv_thr = 1.0d-NUM                  ! can be slightly decreased from fixed SCF
     mixing_mode = 'plain'                ! type of electron mixing
-    mixing_ndim = 16                     
-    diagonalization = 'cg'               ! type of diagonalization used; 
-    diago_full_acc = .true.              !
-    startingwfc = 'atomic+random'        !
+    mixing_ndim = 16                     ! number of iteration of mixing scheme
+    diagonalization = 'cg'               ! type of diagonalization used; 'cg' = conjugate-gradient, slower but more robust than Davidson 
+    diago_full_acc = .true.              ! if .true., unoccupied states diagonalized/processed at the same level of accuracy as occupied states
+    startingwfc = 'atomic+random'        ! wfcs start with atomic positions and add small randomization; prevents 'loss' of valence states
     startingpot = 'file'                 ! pulls starting potential from tmp/ directory
     electron_maxstep = 500               ! max number of iterations in NSCF cycle
 /
 ATOMIC_SPECIES
-    ATOM  ATOMIC_MASS  FILENAME     ! links to your pseudopotential files 
-    ATOM  ATOMIC_MASS  FILENAME     ! all atom types in your cell must have a pseudopotential file listed here
+    ATOM  ATOMIC_MASS  FILENAME          ! links to your pseudopotential files 
+    ATOM  ATOMIC_MASS  FILENAME          ! all atom types in your cell must have a pseudopotential file listed here
 
 CELL_PARAMETERS angstrom
-    x    0.0    0.0                 ! dimensions of your unit cell/supercell (only needed for ibrav = 0)
+    x    0.0    0.0                      ! dimensions of your unit cell/supercell (only needed for ibrav = 0)
     0.0    y    0.0
     0.0    0.0    z
 
@@ -69,6 +69,10 @@ K_POINTS {crystal_b}                        !IMPORTANT!
   0.500  0.500  0.500  30   ! A
   0.000  0.000  0.500   1   ! Z (end point, weight=1)
 ```
+## Significant Parameters:
+**diagonalization** -
+
+**K_POINTS** -
 
 ## Submission File Structure
 
