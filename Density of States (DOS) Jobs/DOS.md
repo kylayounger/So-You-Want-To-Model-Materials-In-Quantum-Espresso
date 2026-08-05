@@ -65,7 +65,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
  
-###################### INPORT DATA ##########################
+###################### IMPORT DATA ##########################
 data = np.loadtxt('path/to/file.dat', comments='#')
 energy   = data[:, 0]          # eV (absolute)
 dos      = data[:, 1]          # states/eV
