@@ -6,6 +6,15 @@
 3. [Submission File Structure](#submission-file-structure)
 
 ## Dynmat Job Basics
+**Purpose:** to post-process data generated in a phonon job and apply an Acoustic Sum Rule (ASR). Diagonalizes the phonon matrix to yield properties such as Raman and IR tensors, vibrational modes, and intensities at the gamma point.
+
+Must be performed after a Phonon job.
+
+**Package:** dynmat.x
+
+**Resource/Time Usage:** low
+
+An example [dynmat input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Dynamical%20Matrix%20(dynmat)%20Jobs/dynmat.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
