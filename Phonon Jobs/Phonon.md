@@ -10,7 +10,18 @@
 ## Input File Structure
 
 ```
-
+&INPUTPH
+    outdir = './tmp'         ! Must be same outdir as FIXED SCF
+    prefix = 'NAME'          ! Must be same prefix as FIXED SCF
+    fildyn = 'NAME'
+    fildvscf = 'dvscf'
+    tr2_ph = 1.0d-12         ! Self-consistency threshold; preset to 1.0d-12, ideally 1.0d-14
+    epsil = .true.           ! .true. = computes dielectric tensor (only works for non-metal systems)
+    ldisp = .false.          ! .true. = calculates phonons for specified k-point grid (not needed here)
+    recover = .true.         ! This is the restart line, .true. = restart, .false. = no restart
+    only_init = .false.      ! .true. = only bands and initialization quantities calculated on restart
+/
+0.0 0.0 0.0
 ```
 
 ## Submission File Structure
