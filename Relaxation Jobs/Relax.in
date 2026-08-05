@@ -1,6 +1,6 @@
 &CONTROL
   calculation = 'relax'
-  prefix = 'bto_2x2x2_perfect'
+  prefix = '2x2x2_bto_perfect'
   outdir = './tmp'
   pseudo_dir ='/home/kylay/scratch/BTO/pseuds'
   tstress = .true.
