@@ -13,7 +13,7 @@
 
 **Resource/Time Usage:** low
 
-An example [Bands input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
+An example [Bands input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Bands%20Jobs/bands.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 
 ## Input File Structure
 ```
