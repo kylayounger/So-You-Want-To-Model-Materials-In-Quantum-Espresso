@@ -1,0 +1,6 @@
+&bands
+   prefix = 'perfect_6kmesh'
+   outdir = './tmp'
+   filband = 'bands.dat'
+   lsym = .true. 
+/
