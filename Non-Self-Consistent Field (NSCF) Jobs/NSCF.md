@@ -4,6 +4,7 @@
 1. [NSCF Job Basics](#nscf-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
+4. [Selecting K-paths]()
 
 ## NSCF Job Basics
 **Purpose:** to generate eigenvectors and eigenvalues of the Kohn-Sham Hamiltonian using a denser k-grid. NSCF calculations use the converged SCF charge density *without updating/recalculating it;* this is why it is so important to have an accurate and precise SCF calculation.
