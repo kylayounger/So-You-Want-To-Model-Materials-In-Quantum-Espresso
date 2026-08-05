@@ -1,5 +1,5 @@
 &bands
-   prefix = 'perfect_6kmesh'
+   prefix = '2x2x2_bto_perfect'
    outdir = './tmp'
    filband = 'bands.dat'
    lsym = .true. 
