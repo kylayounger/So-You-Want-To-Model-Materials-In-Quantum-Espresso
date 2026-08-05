@@ -76,6 +76,8 @@ K_POINTS {crystal_b}                        !IMPORTANT!
 
 **K_POINTS** -
 
+More information on K_POINTS and K-Paths can be found in [Selecting K-Paths](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/Selecting%20K-Paths.md#finding-the-right-k-path-for-your-system).
+
 ## Submission File Structure
 
 ```
