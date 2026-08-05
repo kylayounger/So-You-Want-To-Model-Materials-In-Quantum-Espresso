@@ -70,7 +70,7 @@ K_POINTS {crystal_b}                        !IMPORTANT!
   0.000  0.000  0.500   1   ! Z (end point, weight=1)
 ```
 
-## Significant Parameters:
+### Significant Parameters:
 **diagonalization** -
 
 **K_POINTS** -
@@ -105,3 +105,7 @@ mpirun -np ${NTASKS} pw.x -npool ${NPOOL} -pd .true. < nscf.in >> nscf.out     !
 
 echo "Completed NSCF: $(date)"       ! written to .out file
 ```
+### Significant Parameters:
+**-pd .true.** - 
+
+**NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
