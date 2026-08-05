@@ -6,6 +6,7 @@
 3. [Submission File Structure](#submission-file-structure)
 4. [Plotting Band Structures](#plotting-band-structures)
 
+
 ## Bands Job Basics
 **Purpose:** to post-process the raw data generated from a NSCF job into a easily graphed format. Reads the raw binary files and connects discrete eigenvalues into continuous bands while performing symmetry analysis.
 
