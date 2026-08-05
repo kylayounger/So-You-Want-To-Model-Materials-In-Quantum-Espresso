@@ -6,7 +6,7 @@ Quantum Espresso can be a powerful tool for material modelling - with the right 
 2. [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md)
 3. [Self-Consistent Field (SCF) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/SCF.md)
 4. [Density of States (DOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Density%20of%20States%20(DOS)%20Jobs/DOS.md)
-5. [Projected Density of States (PDOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/tree/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs)
+5. [Projected Density of States (PDOS) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/PDOS.md)
 6. [Non-Self-Consistent-Field (NSCF) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/NSCF.md)
 7. [Bands Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Bands%20Jobs/bands.md)
 8. [Phonon Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Phonon%20Jobs/Phonon.md)
