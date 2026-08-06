@@ -8,7 +8,9 @@
 
 
 ## Phonon Job Basics
-**Purpose:** 
+**Purpose:** to model how atoms vibrate within a crystal lattice in order to evaluate the material's vibrational properties. Uses Density Functional Perturbation Theory (DFTP) to calculate thermal, structural, and spectroscopic properties of a material, such as Born Effective Charges, Dielectric Tensors, and Heat Capacity.
+
+Must be performed after a Fixed SCF job.
 
 **Package:** ph.x
 
