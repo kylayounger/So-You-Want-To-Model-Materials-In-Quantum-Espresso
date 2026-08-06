@@ -101,3 +101,8 @@ print_done "dynmat.out" "DYNMAT"
 
 echo "Pipeline Concluded Successfully: $(date)"         !  written to output file
 ```
+
+### Significant Parameters:
+**-pd .true.** - see [NSCF Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/NSCF.md#significant-parameters-1)
+
+**NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
