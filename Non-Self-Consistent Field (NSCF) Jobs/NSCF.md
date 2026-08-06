@@ -59,16 +59,12 @@ CELL_PARAMETERS angstrom
 ATOMIC_POSITIONS crystal
 ! insert OPTIMIZED fractional coordinates from RELAXATION job here
 
-K_POINTS {crystal_b}                        !IMPORTANT!
-8
-  0.000  0.000  0.000  30   ! Gamma
-  0.500  0.000  0.000  30   ! X
-  0.500  0.500  0.000  30   ! M
-  0.000  0.000  0.000  30   ! Gamma
-  0.000  0.000  0.500  30   ! Z
-  0.500  0.000  0.500  30   ! R
-  0.500  0.500  0.500  30   ! A
-  0.000  0.000  0.500   1   ! Z (end point, weight=1)
+K_POINTS {crystal_b}                        
+NUM              ! total number of k-points in k-path
+  x  y  z  NUM   ! first k-point
+  x  y  z  NUM   ! second k-point
+  x  y  z  NUM   ! ...so on
+  x  y  z   1    ! end point, weight=1
 ```
 
 ### Significant Parameters:
@@ -84,7 +80,9 @@ Options include:
 >    
 > 4. Residual Minimization Method - Direct Inversion in the Iterative State (rmm-davidson, rrm-paro): approximate method that operates from an initial 'guess'. Used to stabilize the SCF loop. Faster than Davidson, but is prone to missing electronic states.
 
-**K_POINTS** -
+**K_POINTS** - denotes the specific high-symmetry path in reciprocal space that you wish to sample. This is the K-path that will be displayed in your band structure diagram.
+
+Each k-point listing must include it's fractional x,y,z coordinates followed by its **weight parameter**. This is the number of intermediate points generated between the k-points (similar to resolution). The weight of the final k-point is ignored by the program, so can be arbitrarily set to 1. 
 
 More information on K_POINTS and K-Paths can be found in [Selecting K-Paths](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/Selecting%20K-Paths.md#finding-the-right-k-path-for-your-system).
 
