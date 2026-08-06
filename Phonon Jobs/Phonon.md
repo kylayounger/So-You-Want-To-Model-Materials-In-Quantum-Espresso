@@ -50,7 +50,11 @@ NPOOL= NUM                           ! how tasks are divided up between nodes/CP
 
 echo "Starting PH.X: $(date)"        ! writes to .out file
 export OMP_NUM_THREADS=1             ! MPI threading
-mpirun -np ${NTASKS} ph.x -npool ${NPOOL} < ph.in >> ph.out       ! run line
+mpirun -np ${NTASKS} ph.x -npool ${NPOOL} -pd .true. < ph.in >> ph.out       ! run line
 
 echo "Completed PH.X: $(date)"       ! writes to .out file
 ```
+### Significant Parameters:
+**-pd .true.** - see [NSCF Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/NSCF.md#significant-parameters-1)
+
+**NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
