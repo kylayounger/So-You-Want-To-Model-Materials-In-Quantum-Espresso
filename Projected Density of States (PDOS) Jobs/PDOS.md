@@ -18,6 +18,7 @@ Must be performed after a Fixed SCF job.
 
 An example [PDOS input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate).
 
+
 ## Input File Structure
 
 ```
