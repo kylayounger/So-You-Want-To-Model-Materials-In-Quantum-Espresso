@@ -5,6 +5,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
 4. [Selecting K-paths]()
+5. [Example NSCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/nscf.in)
 
 ## NSCF Job Basics
 **Purpose:** to generate eigenvectors and eigenvalues of the Kohn-Sham Hamiltonian using a denser k-grid. NSCF calculations use the converged SCF charge density *without updating/recalculating it;* this is why it is so important to have an accurate and precise SCF calculation.
