@@ -72,7 +72,14 @@ K_POINTS {crystal_b}                        !IMPORTANT!
 ```
 
 ### Significant Parameters:
-**diagonalization** -
+**diagonalization** - the algorithm used to find the eigenvalues and eigenvectors of the Hamiltonian in order to solve the Kohn-Sham equation. One of the core functions of the pw.x package.
+
+Options include:
+
+> Davidson (david): default diagonalization; requires the smallest number of Hamiltonian applications per root. Fast, but less robust than other methods and requires more memory. Best for relax and SCF jobs.
+> Conjugate-Gradient (cg): uses a band-by-band approach to sequentially diagonalize the matrix. Slower than Davidson, but more robust and uses less memory. Best for NSCF jobs.
+> Parallel Orbital-Updating (parO): designed for improved parallelization on HPCs and GPUs; good for scaling.
+> Residual Minimization Method - Direct Inversion in the Iterative State (rmm-davidson, rrm-paro): approximate method that operates from an initial 'guess'. Used to stabilize the SCF loop. Faster than Davidson, but is prone to missing electronic states.
 
 **K_POINTS** -
 
