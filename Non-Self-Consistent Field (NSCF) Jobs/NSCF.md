@@ -80,6 +80,7 @@ Options include:
 >    
 > 4. Residual Minimization Method - Direct Inversion in the Iterative State (rmm-davidson, rrm-paro): approximate method that operates from an initial 'guess'. Used to stabilize the SCF loop. Faster than Davidson, but is prone to missing electronic states.
 
+
 **K_POINTS** - denotes the specific high-symmetry path in reciprocal space that you wish to sample. This is the K-path that will be displayed in your band structure diagram.
 
 Each k-point listing must include it's fractional x,y,z coordinates followed by its **weight parameter**. This is the number of intermediate points generated between the k-points (similar to resolution). The weight of the final k-point is ignored by the program, so can be arbitrarily set to 1. 
