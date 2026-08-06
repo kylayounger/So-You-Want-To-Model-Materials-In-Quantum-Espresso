@@ -59,7 +59,7 @@ NPOOL= NUM                         ! how tasks are divided up between nodes/CPUs
 
 echo "Starting DOS: $(date)"       ! written to .out file
 export OMP_NUM_THREADS=1           ! MPI threading
-mpirun -np ${NTASKS} dos.x -npool ${NPOOL} < dos.in >> dos.out      ! run line
+mpirun -np ${NTASKS} dos.x -npool ${NPOOL} -pd .true. < dos.in >> dos.out      ! run line
 
 echo "Completed DOS: $(date)"      ! written to .out file
 ```
