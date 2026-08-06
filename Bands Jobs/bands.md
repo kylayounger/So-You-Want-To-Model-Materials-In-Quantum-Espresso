@@ -5,6 +5,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
 4. [Plotting Band Structures](#plotting-band-structures)
+5. [Example Bands Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Bands%20Jobs/bands.in)
 
 
 ## Bands Job Basics
