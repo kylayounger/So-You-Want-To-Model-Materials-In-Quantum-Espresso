@@ -5,6 +5,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
 4. [Plotting DOS](#plotting-dos)
+5. [Example DOS Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Density%20of%20States%20(DOS)%20Jobs/dos.in)
 
 ## DOS Job Basics
 **Purpose:** to post-process occupation and orbital information generated from SCF runs into easily graphed Density of States format. Evaluates the number of electronic states available at each energy level.
