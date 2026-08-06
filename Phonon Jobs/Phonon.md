@@ -7,6 +7,7 @@
 
 ## Phonon Job Basics
 
+An example [phonon input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Phonon%20Jobs/phonon.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate Supercell).
 ## Input File Structure
 
 ```
