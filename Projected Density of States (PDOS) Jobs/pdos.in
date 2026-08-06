@@ -1,0 +1,13 @@
+&PROJWFC
+   prefix = '2x2x2_bto_perfect'
+   outdir = './tmp/'
+   filpdos = '2x2x2_bto_perfect_pdos.dat'
+   ngauss = 0
+   degauss = 0.01
+   DeltaE = 0.005
+   Emin = 0 
+   Emax = 20
+   lwrite_overlaps = .true.  
+   lbinary_data = .false.   
+   kresolveddos = .false.    
+/
