@@ -89,6 +89,8 @@ nbnd becomes important for future calculations that rely on a range of electron 
 
 A lower conv_thr corresponds to a faster calculation with a higher chance of acheiving convergence at a lower accuracy/precision. A higher conv_thr corresponds to a slower calculation with a lower chance of acheiving convergence at a higher accuracy/precision. Higher conv_thr are needed for more advanced calculations, such as phonon and atomic forces.
 
+**diagonalization** - see [NSCF Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/NSCF.md#significant-parameters)
+
 ## Submission File Structure
 ```
 #!/bin/bash
