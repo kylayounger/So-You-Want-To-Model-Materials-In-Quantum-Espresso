@@ -4,6 +4,7 @@
 1. [Phonon Job Basics](#phonon-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
+4. [Example Phonon Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Phonon%20Jobs/phonon.in)
 
 ## Phonon Job Basics
 
