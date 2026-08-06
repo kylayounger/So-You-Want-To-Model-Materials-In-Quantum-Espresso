@@ -1,0 +1,11 @@
+&INPUTPH
+    outdir = './tmp'
+    prefix = '2x2x2_bto_perfect'
+    fildyn = '2x2x2_bto_perfect.dyn'
+    fildvscf = 'dvscf'
+    tr2_ph = 1.0d-10
+    epsil = .true.
+    ldisp = .false.
+    recover = .true.
+/
+0.0 0.0 0.0
