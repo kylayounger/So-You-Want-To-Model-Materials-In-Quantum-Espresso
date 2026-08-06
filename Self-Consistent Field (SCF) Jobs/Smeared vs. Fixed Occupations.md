@@ -13,11 +13,9 @@
 ## Fixed Occupations
 
 For a system with a discrete band gap, electron occupations are represented by the **Heaviside Step Function:**
-$$
-\begin{aligned}
+$$\begin{aligned}
 f_{nk} &= 1 if \epsilon_{nk} < \epsilon_F \\\\
-f_{nk} &= 0 if \epsilon_{nk} > \epsilon_F
-$$
+f_{nk} &= 0 if \epsilon_{nk} > \epsilon_F$$
 
 ## Additional Resources
 Smeared Occupations:
