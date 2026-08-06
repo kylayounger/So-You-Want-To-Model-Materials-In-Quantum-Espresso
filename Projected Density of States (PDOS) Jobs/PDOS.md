@@ -5,6 +5,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submision-file-structure)
 4. [Plotting PDOS](#plotting-pdos)
+5. [Example PDOS Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in)
 
 ## PDOS Job Basics
 
