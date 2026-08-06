@@ -8,7 +8,7 @@
 5. [Example PDOS Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in)
 
 ## PDOS Job Basics
-**Purpose:** to project wavefunctions generated from SCF runs onto atomic orbitals. This allows visualization of individual atomic contributions to total electron density of the material.
+**Purpose:** to project wavefunctions generated from SCF runs onto atomic orbitals. This allows visualization of individual atomic contributions to the total electron density of the material.
 
 Must be performed after a Fixed SCF job.
 
