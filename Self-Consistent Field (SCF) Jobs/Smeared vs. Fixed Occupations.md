@@ -22,14 +22,11 @@ u_{nk} = 0 \; if \;\; E_{nk} > E_f
 
 Where $u_{nk}$ is the occupation number at a certain band index (n) and k-point (k), $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), and $E_f$ is the energy of the Fermi level.
 
-## Additional Resources
-Smeared Occupations:
+## Sources and Resources
 
 [N. Marzari, D. Vanderbilt, A. De Vita, and M. C. Payne, "Thermal Contraction and Disordering of the Al(110) Surface", Physical Review Letters 82, 3296 (1999).](https://doi.org/10.1103/PhysRevLett.82.3296)
 
 [M. Methfessel and A. T. Paxton, Physical Review B 40, 3616 (1989)](https://doi.org/10.1103/PhysRevB.40.3616)
-
-Fixed Occupations:
 
 [W. Kohn and L. J. Sham, "Self-consistent equations including exchange and correlation effects", Physical Review 140, A1133 (1965)](https://doi.org/10.1103/PhysRev.140.A1133)
 
