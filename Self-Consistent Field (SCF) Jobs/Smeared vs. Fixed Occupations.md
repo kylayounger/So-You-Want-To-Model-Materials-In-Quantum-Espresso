@@ -18,6 +18,7 @@ u_{nk} = 0 \; if \;\; E_{nk} > E_f
 
 ```
 
+
 Where $u_{nk}$ is the occupation number at a certain band index (n) and k-point (k), $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), and $E_f$ is the energy of the Fermi level.
 
 Simply put, this step function states that all electronic orbitals with energy less than the Fermi level will be occupied, and that all orbitals with energy greater than the Fermi level will be unoccupied. This function is **discontinuous**; $u_{nk}$ can only ever equal 0 or 1 at a given energy level. Because of this inherit discontinuity, fixed occupations **must have a discrete occupancy value** - this means that Quantum Espresso must be able to determine if each orbital within your system is $u_{nk} = 0$ or $u_{nk} = 1$ without ambiguity.
