@@ -24,7 +24,7 @@ Simply put, this step function states that all electronic orbitals with energy l
 
 For systems with a well-established band gap (ie. insulators), the HOMO and LUMO orbitals are clearly defined and the Fermi level sits well within the band gap. These are the systems for which Quantum Espresso recommends using occupations = 'fixed'; this setting is generally not recommended for metals and semi-conductors. STUFF ABOUNT HOW DEFECTS CAUSE DISCONTINUITIES
 
-However, in order to run higher-level calculations (such a phonon and dynamical matrix jobs), **electron occupations must be 'fixed'**. Herein lies the issue with occupations: if you're modelling a semi-conductor or defect-containing material **you must still get 'fixed' wavefunction files**, even though setting occupations = 'fixed' will result in a discontinuity and cause the job to fail.
+However, in order to run higher-level calculations (such a phonon and dynamical matrix jobs), **electron occupations must be 'fixed'**. Herein lies the issue: if you're modelling a semi-conductor or defect-containing material, **you must still get wavefunctions with 'fixed' occupations**, even though setting occupations = 'fixed' results in a discontinuity and causes the job to fail.
 
 **So...how do we get around this?**
 
