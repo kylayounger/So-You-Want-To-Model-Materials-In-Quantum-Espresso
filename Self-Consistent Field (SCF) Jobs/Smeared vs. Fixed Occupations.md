@@ -15,9 +15,10 @@
 For a system with a discrete band gap, electron occupations are represented by the **Heaviside Step Function:**
 
 ```math
-f_{nk} = 1 \; if \;\; \epsilon_{nk} < \epsilon_F \; ; \;\;\;\;
-f_{nk} = 0 \; if \;\; \epsilon_{nk} > \epsilon_F
+u_{nk} = 1 \; if \;\; E_{nk} < \E_f \; ; \;\;\;\;
+u_{nk} = 0 \; if \;\; E_{nk} > \E_f
 ```
+Where $u_{nk}$ is the occupation number at a certain band index (n) and k-point (k), $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), and $E_f$ is the energy of the Fermi level.
 
 ## Additional Resources
 Smeared Occupations:
