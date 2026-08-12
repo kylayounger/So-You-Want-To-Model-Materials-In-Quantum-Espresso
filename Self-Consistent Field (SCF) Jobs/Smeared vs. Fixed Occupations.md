@@ -40,6 +40,7 @@ When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations 
 f(x) =  \frac{1}{2} \; erfc(x) + \; \frac{1}{\sqrt{\pi}} \Sigma_{n=1}^{N} \; A_n \; H_{2n+1}(x) \; e^{-x^2}
 ```
 <br>
+
 Where $erfc(x)$ is the complimentary error function, $A_n$ are expansion coefficients, and $H_n$ are Hermite polynomials.
 
 The value of $x$ is determined by:
