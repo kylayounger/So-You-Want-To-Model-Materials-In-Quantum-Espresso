@@ -30,11 +30,11 @@ However, in order to run higher-level calculations (such a phonon and dynamical 
 
 **So...how do we get around this?**
 
+By submitting a SCF calculation with occupations = 'smearing' first!
+
 ## Smeared Occupations
 
-*Disclaimer: There are multiple types of smearing within Quantum Espresso; I will be discussing Methfessel-Vanderbilt (MV) smearing, as it is what I’m the most familiar with using.*
-
-When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using a Fermi-Dirac Smoothing function $f(x)$ :
+When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using the function $f(x)$ :
 
 ```math
 f(x) =  \frac{1}{2} \; erfc(x) + \; \frac{1}{\sqrt{\pi}} \Sigma_{n=1}^{N} \; A_n \; H_{2n+1}(x) \; e^{-x^2}
@@ -43,25 +43,41 @@ f(x) =  \frac{1}{2} \; erfc(x) + \; \frac{1}{\sqrt{\pi}} \Sigma_{n=1}^{N} \; A_n
 
 Where $erfc(x)$ is the complimentary error function, $A_n$ are expansion coefficients, $H_n$ are Hermite polynomials (classical orthogonal polynomial sequences that denote eigenstates of a quantum harmonic oscillator), and N is the order of the Hermite polynomial expansion.
 
-The value of N is controlled by the type of smearing used:
-> smearing = 'gaussian'; N = 0, pure erfc of zeroth order
-> 
-> smearing = 'mp'; N = 1, Methfessel-Paxton
-> 
-> smearing = 'mv'; N = 1 with positive-definite modification, Methfessel-Vanderbilt
-> 
-> smearing = 'fd'; N = 0 but physically motivated, Fermi-Dirac
-<br>
-
-The value of $x$ in the Fermi-Dirac Smoothing Function is determined by:
+The value of $x$ in the occupation function is determined by:
 
 ```math
 x = \left( E_{nk} - E_f \right) / \sigma
 ```
 <br>
 
-Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value. By convention, a state is above the Fermi level when x > 0 and below the Fermi level when x < 0.
+Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value (smearing width). By convention, a state is above the Fermi level when x > 0 and below the Fermi level when x < 0.
 
+In the electron occupation function, N controls how many correction terms are added to the base Gaussian smearing. Increasing N makes the total energy of your system converge faster by cancelling error terms in the free energy equation:
+> smearing = 'gaussian'; N = 0, error = $O(\sigma^2)$; base Gaussian smearing
+>
+> smearing = 'fd'; N = 0, error = $O(\sigma^2)$; Fermi-Dirac
+> 
+> smearing = 'mp'; N = 1, error = $O(\sigma^4)$; Methfessel-Paxton
+> 
+> smearing = 'mv'; N = 1, error = $O(\sigma^4)$; Methfessel-Vanderbilt
+> 
+<br>
+
+### Gaussian Smearing: N = 0
+Basic smearing used to smooth discrete or discontinuous occupations into a normal distribution:
+
+```math
+f_{N=0}(x) = \frac{1}{2} erfc(-x)
+```
+Where $erfc(x)$ is the complimentary error function:
+
+```math
+erfc(x) = \frac{2}{sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
+```
+Where $t$ is a dummy integration variable.
+
+### Methfessel-Paxton Smearing: N = 1
+### Methfessel-Vanderbilt Smearing: N = 1
 
 ## Sources and Resources
 
