@@ -32,6 +32,25 @@ However, in order to run higher-level calculations (such a phonon and dynamical 
 
 ## Smeared Occupations
 
+Disclaimer: There are multiple types of smearing within Quantum Espresso; I will be discussing Methfessel-Vanderbilt (MV) smearing, as it is what I’m the most familiar with using.
+
+When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using a Fermi-Dirac Smoothing function $f(x)$ :
+
+```math
+f(x) =  \frac{1}{2} erfc(x) + \frac{1}{\sqrt{\pi}} \Sum_{n=1}^{N} A_n H_{2n+1}(x) e^{-x^2}
+```
+<br>
+Where $erfc(x)$ is the complimentary error function, A_n are expansion coefficients, and H_n are Hermite polynomials.
+
+The value of $x$ is determined by:
+
+```math
+x = \left( E_{nk} - E_f \right) / \sigma
+```
+<br>
+Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value.
+
+
 ## Sources and Resources
 
 [N. Marzari, D. Vanderbilt, A. De Vita, and M. C. Payne, "Thermal Contraction and Disordering of the Al(110) Surface", Physical Review Letters 82, 3296 (1999).](https://doi.org/10.1103/PhysRevLett.82.3296)
