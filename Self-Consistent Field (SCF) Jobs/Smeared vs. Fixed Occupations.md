@@ -53,7 +53,7 @@ The value of N is controlled by the type of smearing used:
 > smearing = 'fd'; N = 0 but physically motivated, Fermi-Dirac
 <br>
 
-The value of $x$ is determined by:
+The value of $x$ in the Fermi-Dirac Smoothing Function is determined by:
 
 ```math
 x = \left( E_{nk} - E_f \right) / \sigma
