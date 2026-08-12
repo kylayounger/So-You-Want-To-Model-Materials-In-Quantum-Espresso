@@ -77,7 +77,7 @@ erfc(x) = \frac{2}{\sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
 ```
 <br>
 
-Where $t$ is a dummy integration variable.
+And $t$ is a dummy integration variable.
 
 ### Methfessel-Paxton Smearing: N = 1
 ### Methfessel-Vanderbilt Smearing: N = 1
