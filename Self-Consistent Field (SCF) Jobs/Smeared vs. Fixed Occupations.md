@@ -45,8 +45,11 @@ Where $erfc(x)$ is the complimentary error function, $A_n$ are expansion coeffic
 
 The value of N is controlled by the type of smearing used:
 > smearing = 'gaussian'; N = 0, pure erfc of zeroth order
+> 
 > smearing = 'mp'; N = 1, Methfessel-Paxton
+> 
 > smearing = 'mv'; N = 1 with positive-definite modification, Methfessel-Vanderbilt
+> 
 > smearing = 'fd'; N = 0 but physically motivated, Fermi-Dirac
 
 The value of $x$ is determined by:
