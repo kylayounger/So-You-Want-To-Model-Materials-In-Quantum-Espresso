@@ -22,7 +22,9 @@ Where $u_{nk}$ is the occupation number at a certain band index (n) and k-point 
 
 Simply put, this step function states that all electronic orbitals with energy less than the Fermi level will be occupied, and that all orbitals with energy greater than the Fermi level will be unoccupied. This function is **discontinuous**; $u_{nk}$ can only ever equal 0 or 1 at a given energy level. Because of this inherit discontinuity, fixed occupations **must have a discrete occupancy value** - this means that Quantum Espresso must be able to determine if each orbital within your system is $u_{nk} = 0$ or $u_{nk} = 1$ without ambiguity.
 
-For systems with a well-established band gap (ie. insulators), the HOMO and LUMO orbitals are clearly defined and the Fermi level sits well within the band gap. These are the systems for which Quantum Espresso recommends using occupations = 'fixed'; this setting is generally not recommended for metals and semi-conductors. STUFF ABOUNT HOW DEFECTS CAUSE DISCONTINUITIES
+For systems with a well-established band gap (ie. insulators), the HOMO and LUMO orbitals are clearly defined and the Fermi level sits well within the band gap. These are the systems for which Quantum Espresso recommends using occupations = 'fixed'; this setting is generally not recommended for metals and semi-conductors. 
+
+This effect can also be seen when defect-containing systems are run with 'fixed' occupations: if a defect state is too close to the Fermi level, it creates a discontinuity where The SCF violently oscillates between $u_{nk} = 0$ and $u_{nk} = 1$. As Quantum Espresso is unable to determine the exact occupancy of this state, the job will fail with 'IEEE denormal' or 'c_bands' errors.
 
 However, in order to run higher-level calculations (such a phonon and dynamical matrix jobs), **electron occupations must be 'fixed'**. Herein lies the issue: if you're modelling a semi-conductor or defect-containing material, **you must still get wavefunctions with 'fixed' occupations**, even though setting occupations = 'fixed' results in a discontinuity and causes the job to fail.
 
