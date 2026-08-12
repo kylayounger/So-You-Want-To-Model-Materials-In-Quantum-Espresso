@@ -51,6 +51,7 @@ The value of N is controlled by the type of smearing used:
 > smearing = 'mv'; N = 1 with positive-definite modification, Methfessel-Vanderbilt
 > 
 > smearing = 'fd'; N = 0 but physically motivated, Fermi-Dirac
+<br>
 
 The value of $x$ is determined by:
 
