@@ -32,7 +32,7 @@ However, in order to run higher-level calculations (such a phonon and dynamical 
 
 ## Smeared Occupations
 
-Disclaimer: There are multiple types of smearing within Quantum Espresso; I will be discussing Methfessel-Vanderbilt (MV) smearing, as it is what I’m the most familiar with using.
+*Disclaimer: There are multiple types of smearing within Quantum Espresso; I will be discussing Methfessel-Vanderbilt (MV) smearing, as it is what I’m the most familiar with using.*
 
 When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using a Fermi-Dirac Smoothing function $f(x)$ :
 
@@ -41,7 +41,13 @@ f(x) =  \frac{1}{2} \; erfc(x) + \; \frac{1}{\sqrt{\pi}} \Sigma_{n=1}^{N} \; A_n
 ```
 <br>
 
-Where $erfc(x)$ is the complimentary error function, $A_n$ are expansion coefficients, and $H_n$ are Hermite polynomials.
+Where $erfc(x)$ is the complimentary error function, $A_n$ are expansion coefficients, $H_n$ are Hermite polynomials (classical orthogonal polynomial sequences that denote eigenstates of a quantum harmonic oscillator), and N is the order of the Hermite polynomial expansion.
+
+The value of N is controlled by the type of smearing used:
+> smearing = 'gaussian'; N = 0, pure erfc of zeroth order
+> smearing = 'mp'; N = 1, Methfessel-Paxton
+> smearing = 'mv'; N = 1 with positive-definite modification, Methfessel-Vanderbilt
+> smearing = 'fd'; N = 0 but physically motivated, Fermi-Dirac
 
 The value of $x$ is determined by:
 
@@ -50,7 +56,7 @@ x = \left( E_{nk} - E_f \right) / \sigma
 ```
 <br>
 
-Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value.
+Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value. By convention, a state is above the Fermi level when x > 0 and below the Fermi level when x < 0.
 
 
 ## Sources and Resources
