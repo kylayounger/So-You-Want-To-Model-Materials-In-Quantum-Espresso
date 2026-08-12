@@ -67,7 +67,7 @@ In the electron occupation function, N controls how many correction terms are ad
 Basic smearing used to smooth discrete or discontinuous occupations into a normal distribution:
 
 ```math
-f_{N=0}(x) = \frac{1}{2} erfc(-x)
+f_{N=0}(x) = \; \frac{1}{2} \; erfc(-x)
 ```
 Where $erfc(x)$ is the complimentary error function:
 
