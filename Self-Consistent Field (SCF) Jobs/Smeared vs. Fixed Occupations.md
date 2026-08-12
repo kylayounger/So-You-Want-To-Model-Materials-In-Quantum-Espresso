@@ -68,11 +68,13 @@ Basic smearing used to smooth discrete or discontinuous occupations into a norma
 ```math
 f_{N=0}(x) = \; \frac{1}{2} \; erfc(-x)
 ```
+<br>
 Where $erfc(x)$ is the complimentary error function:
 
 ```math
 erfc(x) = \frac{2}{\sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
 ```
+<br>
 Where $t$ is a dummy integration variable.
 
 ### Methfessel-Paxton Smearing: N = 1
