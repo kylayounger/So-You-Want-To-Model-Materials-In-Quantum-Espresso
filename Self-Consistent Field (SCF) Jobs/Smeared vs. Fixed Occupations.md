@@ -13,7 +13,7 @@
 When occupations = 'fixed', electron occupations are modelled using the **Heaviside Step Function:**
 
 ```math
-u_{nk} = 1 \; if \;\; E_{nk} < E_f \; ; \;\;\;\; <br>
+u_{nk} = 1 \; if \;\; E_{nk} < E_f \; ; \;\;\;\;
 u_{nk} = 0 \; if \;\; E_{nk} > E_f
 ```
 <br>
