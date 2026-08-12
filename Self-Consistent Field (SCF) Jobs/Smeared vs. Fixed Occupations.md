@@ -72,7 +72,7 @@ f_{N=0}(x) = \; \frac{1}{2} \; erfc(-x)
 Where $erfc(x)$ is the complimentary error function:
 
 ```math
-erfc(x) = \frac{2}{sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
+erfc(x) = \frac{2}{\sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
 ```
 Where $t$ is a dummy integration variable.
 
