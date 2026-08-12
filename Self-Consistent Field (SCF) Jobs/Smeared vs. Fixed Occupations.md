@@ -49,6 +49,7 @@ The value of $x$ is determined by:
 x = \left( E_{nk} - E_f \right) / \sigma
 ```
 <br>
+
 Where $E_{nk}$ is the energy (or Kohn-Sham eigenvalue) at a given band index (n) and k-point (k), $E_f$ is the energy of the Fermi level, and $\sigma$ is the degauss value.
 
 
