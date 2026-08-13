@@ -35,7 +35,9 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
     ntyp = NUM                           ! total number of elements in your system
     ecutwfc = NUM                        ! kinetic energy cutoff for wfcs
     ecutrho = NUM                        ! kinetic energy cutoff for charge density, 4*ecutwfc is default
-    occupations = 'fixed'                ! 'smearing' = smeared electrons for metals, 'fixed' = insulator with a bandgap
+    occupations = 'smearing'             ! 'fixed' or 'smearing'
+    smearing = 'mv'                      ! type of smearing used
+    degauss = NUM                       
     nbnd = NUM                           ! total number of electronic bands to be calculated, must be the same as SCF
 /
 &ELECTRONS
