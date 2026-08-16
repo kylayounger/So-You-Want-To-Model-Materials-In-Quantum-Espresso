@@ -33,6 +33,7 @@ However, in order to run higher-level calculations (such a phonon and dynamical 
 By submitting a SCF calculation with occupations = 'smearing' first!
 
 ## Smeared Occupations
+Performing a SCF calculation with occupations = 'smearing' and THEN performing a SCF calculation using occupations = 'fixed' eliminates the discontinuity issue.
 
 When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using the function $f(x)$ :
 
@@ -78,6 +79,8 @@ erfc(x) = \frac{2}{\sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
 <br>
 
 And $t$ is a dummy integration variable.
+
+Gaussian smearing is straight-forward to explain: it simply smoothes out the transition from $u_{nk} = 0$ to $u_{nk} = 1$
 
 ### Methfessel-Paxton Smearing: N = 1
 ### Methfessel-Vanderbilt Smearing: N = 1
