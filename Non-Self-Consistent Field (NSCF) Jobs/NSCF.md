@@ -26,8 +26,6 @@ An example [NSCF input file](https://github.com/kylayounger/So-You-Want-To-Model
     prefix = 'NAME'                      ! labels and collects data associated with this job, must be the same name as SCF
     outdir = './tmp'                     ! where wavefunctions and other data is stored, must be the same as SCF
     pseudo_dir = 'path/to/pseuds'        
-    restart_mode = 'from_scratch'        !'from_scratch' = completly restarts, 'restart' = continue from where last job finished
-    tprnfor = .true.                     ! calculates forces
 /
 &SYSTEM
     ibrav = 0                            ! cell type; must be the same as SCF
