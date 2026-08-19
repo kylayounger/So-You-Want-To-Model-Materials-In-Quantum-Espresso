@@ -129,3 +129,5 @@ I recommend using the -pd .true. modifier in all submission scripts after SCF (N
 
 **NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
 
+## Common Errors:
+**"problems computing cholesky"** - the overlap matrix is not positive and definite. Switch to diagonalization = 'cg' and/or increase ecutwfc.
