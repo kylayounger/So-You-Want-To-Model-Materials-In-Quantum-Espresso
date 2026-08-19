@@ -2,9 +2,7 @@
     calculation = 'bands'
     prefix = '2x2x2_bto_perfect'                      
     outdir = './tmp'                     
-    pseudo_dir = '/home/kylay/scratch/BTO/pseuds'
-    restart_mode = 'from_scratch'
-    tprnfor = .true.                    
+    pseudo_dir = '/home/kylay/scratch/BTO/pseuds'                   
 /
 &SYSTEM
     ibrav = 0
