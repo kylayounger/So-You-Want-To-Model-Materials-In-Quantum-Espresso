@@ -132,4 +132,5 @@ I recommend using the -pd .true. modifier in all submission scripts after SCF (N
 ## Common Errors:
 **"problems computing cholesky"** - the overlap matrix is not positive and definite. Switch to diagonalization = 'cg' and/or increase ecutwfc.
 **"c_bands: X eigenvalues not converged"** - mismatched nbnd parameter; NSCF input has different nbnd number than SCF input, leading to 'unconverged' eigenvalues (eigenvalues that don't exist).
+
 **Error in read_collected_wfc (1)** - - mismatched nbnd parameter; NSCF input has different nbnd number than SCF input, wavefunction files cannot be collected for these bands (the files don't exists).
