@@ -6,7 +6,7 @@
 4. [Example PP Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Post%20Processing%20(PP)%20Jobs/pp.in)
 
 ## PP Job Basics
-**Purpose:**
+**Purpose:** used to extract various data form SCF outputs. Here, PP runs are used to extract the vacuum potential of free space in order to calculate the Work function.
 
 **Package:** pp.x
 
