@@ -6,7 +6,7 @@
 4. [Example Average Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Average%20Jobs/average.in)
 
 ## Average Job Basics
-**Purpose:**
+**Purpose:** to process the output of PP runs.
 
 **Package:** average.x
 
