@@ -1,0 +1,7 @@
+&INPUTPP
+   prefix = '2x2x2_bto_perfect'               
+   outdir = './tmp/'             
+   plot_num = 11                 
+   filplot = 'total_pot.dat'     
+/
+&PLOT
