@@ -4,7 +4,7 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submision-file-structure)
 4. [Plotting PP](#plotting-pp)
-5. [Example PP Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in)
+5. [Example PP Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Post%20Processing%20(PP)%20Jobs/pp.in)
 
 ## PP Job Basics
 **Purpose:**
@@ -13,7 +13,7 @@
 
 **Resource/Time Usage:** low
 
-An example [PP input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate).
+An example [PP input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Post%20Processing%20(PP)%20Jobs/pp.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate).
 
 ## Input File Structure
 ```
