@@ -3,8 +3,7 @@
 1. [PP Job Basics](#pp-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submision-file-structure)
-4. [Plotting PP](#plotting-pp)
-5. [Example PP Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Post%20Processing%20(PP)%20Jobs/pp.in)
+4. [Example PP Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Post%20Processing%20(PP)%20Jobs/pp.in)
 
 ## PP Job Basics
 **Purpose:**
