@@ -3,7 +3,7 @@
 1. [Average Job Basics](#average-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
-4. [Example Average Input File]()
+4. [Example Average Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Average%20Jobs/average.in)
 
 ## Average Job Basics
 **Purpose:**
@@ -12,7 +12,7 @@
 
 **Resource/Time Usage:** low
 
-An example [Average input file]() is attached for your reference (2x2x2 Tetragonal Barium Titanate).
+An example [Average input file](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Average%20Jobs/average.in) is attached for your reference (2x2x2 Tetragonal Barium Titanate).
 
 ## Input File Structure
 ```
