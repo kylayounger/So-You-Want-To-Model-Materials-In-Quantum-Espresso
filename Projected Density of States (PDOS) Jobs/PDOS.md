@@ -41,8 +41,11 @@ An example [PDOS input file](https://github.com/kylayounger/So-You-Want-To-Model
 
 **ngauss** - defines the type of Gaussian broadening used.
 > ngauss = 0: Simple Gaussian (default)
+> 
 > ngauss = 1: Methfessel-Paxton of order 1 (higher order is specified by larger positive integers)
+> 
 > ngauss = -1: Cold-Smearing
+> 
 > ngauss = -99: Fermi-Dirac function
 
 **degauss** - Gaussian broadening, measured in Ry (NOT eV!). Larger degauss parameter results in increased smoothing; less sharp peaks and a more continuous function. Analogous to the 'accuracy' of the PDOS.
