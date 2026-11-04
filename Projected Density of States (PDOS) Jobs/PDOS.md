@@ -236,7 +236,7 @@ Each PDOS shell file follows this format:
 
 Where the first column is the energy level (y-axis), the second column is the total local density of states (sum of the following columns), and the remaining PDOS columns are individual orbital state contributions. 
 
-In classic QE fashion, the PDOS headers for these files aren't overly useful by themselves, as they don't specify which energy corresponds to which orbital in the shell. The solution to this is written in the ylmr2.90 file in QE's code, which gives the order the orbitals are displayed in the shell files:
+In classic QE fashion, the PDOS headers for these files aren't overly useful, as they don't specify which energy corresponds to which orbital in the shell. The solution to this is written in the ylmr2.90 file in QE's code, which gives the order the orbitals are displayed in the shell files:
 
 | Shell | Momentum Component | Plain-English Label | Order in Shell File (L->R)|
 |---|---|---|---|
