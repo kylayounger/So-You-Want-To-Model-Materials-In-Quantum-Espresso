@@ -89,6 +89,9 @@ echo "Completed PROJWFC: $(date)"   ! written to .out file
 
 
 ## Plotting PDOS
+Runs from a set of PDOS shell files (can be zipped and exported from directory) contained in a folder.
+Need E_Fermi from scf output (fixed.out).
+
 Single PDOS Plot:
 ```
 import matplotlib.pyplot as plt
