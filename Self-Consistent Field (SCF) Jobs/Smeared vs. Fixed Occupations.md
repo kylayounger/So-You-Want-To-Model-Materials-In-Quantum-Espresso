@@ -4,7 +4,8 @@
 1. [What are Occupations?](#what-are-occupations)
 2. [Fixed Occupations](#fixed-occupations)
 3. [Smeared Occupations](#smeared-occupations)
-4. [Additional Resources](#additional-resources)
+4. [Types of Smearing](#types-of-smearing)
+5. [Additional Resources](#additional-resources)
 
 ## What are Occupations?
 
@@ -33,7 +34,9 @@ However, in order to run higher-level calculations (such a phonon and dynamical 
 By submitting a SCF calculation with occupations = 'smearing' first!
 
 ## Smeared Occupations
-Performing a SCF calculation with occupations = 'smearing' and THEN performing a SCF calculation using occupations = 'fixed' eliminates the discontinuity issue.
+Performing a SCF calculation with occupations = 'smearing' and THEN performing a SCF calculation using occupations = 'fixed' eliminates the discontinuity issue. In simple terms, running a 'smearing' calculation allows QE to work around defect states that are close to the band gap, calculating the electronic structure to a reasonable approximation of the fixed states. 
+
+From here, the 'fixed' occupations can be calculated using the wavefunctions generated in the 'smearing' run. The 'smearing' run establishes accuracy, and the 'fixed' run improves precision (aka determining exactly which orbitals are filled/empty).
 
 When occupations = ‘smearing’ and smearing = ‘mv’, electron occupations are modelled using the function $f(x)$ :
 
@@ -63,6 +66,7 @@ In the electron occupation function, N controls how many correction terms are ad
 > smearing = 'mv'; N = 1, error = $O(\sigma^4)$; Methfessel-Vanderbilt
 <br>
 
+## Types of Smearing
 ### Gaussian Smearing: N = 0
 Basic smearing used to smooth discrete or discontinuous occupations into a normal distribution:
 
