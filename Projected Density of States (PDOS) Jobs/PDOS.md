@@ -223,8 +223,25 @@ Each PDOS shell file follows this format:
 |0.01|0.5|0.3|0.15|0.05|
 ...
 
+Where the first column is the energy level (y-axis), the second column is the total local density of states (sum of the following columns), and the remaining PDOS columns are individual orbital state contributions. 
 
-Individual Orbital PDOS Plot:
+In classic QE fashion, the PDOS headers for these files aren't overly useful by themselves, as they don't specify which energy corresponds to which orbital in the shell. The solution to this is written in the ylmr2.90 file in QE's code, which gives the order the orbitals are displayed in the shell files:
+
+| Shell | Momentum Component | Plain-English Label | Order in Shell File (L->R)|
+|---|---|---|---|
+|S|$P_{0,0}(t)$|$S$|1|
+|P|$P_{1,0}(t)$|$P_z$|1|
+|P|$P_{1,1}cos \psi (t)$|$P_x$|2|
+|P|$P_{1,1}sin \psi (t)$|$P_y$|3|
+|D|$P_{2,0}(t)$|$D_{z^2}$|1|
+|D|$P_{2,1}cos \psi (t)$|$D_{xz}$|2|
+|D|$P_{2,1}sin \psi (t)$|$D_{yz}$|3|
+|D|$P_{2,2}cos2 \psi (t)$|$D_{x^2  -y^2}$|4|
+|D|$P_{2,2}sin2 \psi (t)$|$D_{xy}$|5|
+
+Note: the orbitals are referred to by their momentum component, not plain-english label, in the QE files.
+
+The following script can then be used to parse the orbital energies from the above columns:
 ```
 import os
 import matplotlib.pyplot as plt
