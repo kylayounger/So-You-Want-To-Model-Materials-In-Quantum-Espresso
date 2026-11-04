@@ -231,13 +231,13 @@ In classic QE fashion, the PDOS headers for these files aren't overly useful by 
 |---|---|---|---|
 |S|$P_{0,0}(t)$|$S$|1|
 |P|$P_{1,0}(t)$|$P_z$|1|
-|P|$P_{1,1}cos \psi (t)$|$P_x$|2|
-|P|$P_{1,1}sin \psi (t)$|$P_y$|3|
+|P|$P_{1,1}cos \phi (t)$|$P_x$|2|
+|P|$P_{1,1}sin \phi (t)$|$P_y$|3|
 |D|$P_{2,0}(t)$|$D_{z^2}$|1|
-|D|$P_{2,1}cos \psi (t)$|$D_{xz}$|2|
-|D|$P_{2,1}sin \psi (t)$|$D_{yz}$|3|
-|D|$P_{2,2}cos2 \psi (t)$|$D_{x^2  -y^2}$|4|
-|D|$P_{2,2}sin2 \psi (t)$|$D_{xy}$|5|
+|D|$P_{2,1}cos \phi (t)$|$D_{xz}$|2|
+|D|$P_{2,1}sin \phi (t)$|$D_{yz}$|3|
+|D|$P_{2,2}cos2 \phi (t)$|$D_{x^2  -y^2}$|4|
+|D|$P_{2,2}sin2 \phi (t)$|$D_{xy}$|5|
 
 Note: the orbitals are referred to by their momentum component, not plain-english label, in the QE files.
 
