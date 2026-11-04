@@ -5,7 +5,8 @@
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submision-file-structure)
 4. [Plotting PDOS](#plotting-pdos)
-5. [Example PDOS Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in)
+5. [Plotting Individual Orbitals](#plotting-individual-orbitals)
+6. [Example PDOS Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Projected%20Density%20of%20States%20(PDOS)%20Jobs/pdos.in)
 
 ## PDOS Job Basics
 **Purpose:** to project wavefunctions generated from SCF runs onto atomic orbitals. This allows visualization of individual atomic contributions to the total electron density of the material.
@@ -210,4 +211,67 @@ for atom_num, entries in sorted(atoms.items(), key=lambda x: int(x[0])):
    if save_dir:
       os.makedirs(save_dir, exist_ok=True)
       plt.savefig(os.path.join(save_dir, '%s_atom%s_%s' % (name, atom_num, element)))
+```
+## Plotting Individual Orbitals
+
+Quantum Espresso has functionalities to sum PDOS contributions (sumpdos.x), but no built-in handle to process individual orbitals within a shell (ie. Px, Py, Pz in P shell). The simplest way to model these specific orbitals is to use the information from a previous PDOS shell file (one of the files produced by the projwfc.x run).
+
+Each PDOS shell file follows this format:
+
+|E (eV) | ldos(E) | pdos(E) | pdos(E) | pdos(E) |
+|---|---|---|---|---|
+|0.01|0.5|0.3|0.15|0.05|
+...
+
+
+Individual Orbital PDOS Plot:
+```
+import os
+import matplotlib.pyplot as plt
+import numpy as np
+
+######## MANUAL INPUT ##########
+Fermi_level = NUM  # eV, from excel sheet
+orb_type = 'p'         # 's', 'p', or 'd'
+fname = 'path/to/pdos_file'
+outdir = 'path/to/save_file'
+################################
+
+###### SETS NUMBER OF ORBITALS PER SHELL ######
+ORBITALS = {
+    's': [('s', 2, r'$s$')],
+    'p': [('pz', 2, r'$p_z$'), ('px', 3, r'$p_x$'), ('py', 4, r'$p_y$')],
+    'd': [('dz2', 2, r'$d_{z^2}$'), ('dxz', 3, r'$d_{xz}$'),
+          ('dyz', 4, r'$d_{yz}$'), ('dx2y2', 5, r'$d_{x^2-y^2}$'),
+          ('dxy', 6, r'$d_{xy}$')],
+}
+
+if orb_type not in ORBITALS:
+    raise ValueError(f"ERROR: no valid orbital type specified! got {orb_type!r}")
+
+data = np.loadtxt(fname)
+energy = data[:, 0] - Fermi_level   # shifted: Fermi level -> 0 eV
+
+xmin, xmax = 5 - Fermi_level, 18 - Fermi_level
+ymax = data[:, 2:].max() * 1.1
+
+######### PLOT INDIVIDUAL PNGs PER ORBITAL ########
+for name, col, label in ORBITALS[orb_type]:
+    pdos = data[:, col]
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    ax.plot(energy, pdos, linewidth=0.75, color='#d62728', label=f'{label} orbital')
+    ax.axvline(x=0, linewidth=0.5, color='k', linestyle=(0, (8, 10)))
+    ax.fill_between(energy, 0, pdos, where=(energy < 0),
+                    facecolor='#d62728', alpha=0.25)
+    ax.set_xlabel(r'$E - E_f$ (eV)')
+    ax.set_ylabel('PDOS (states/eV)')
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(0, 6)
+    ax.legend(frameon=False)
+
+    out = os.path.join(outdir, f'pdos_{name}.png')
+    fig.savefig(out, dpi=300, bbox_inches='tight')
+    plt.close(fig)
+    print(f'saved {out}')
 ```
