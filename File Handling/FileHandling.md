@@ -19,11 +19,15 @@ When running sequential jobs on the same system (ie relax --> SCF --> NSCF), *pr
 
 **outdir** - specifies the directory in which output data is stored. Found in the input file (.in) for a job.
 
-For example, if *outdir = cat* and *prefix = mouse*, saved data would be stored in the directory *./cat/mouse.save*
+For example, if *outdir = 'cat'* and *prefix = 'mouse'*, saved data would be stored in the directory *./cat/mouse.save*
 
-*mouse.save* would contain the wavefunction files (wfc.dat), XML schema file (data-file-schema.xml), and charge density files (charge-density.dat). Temporary scratch files are also written to this directory.
+*mouse.save* would contain the wavefunction files (wfc.dat), XML schema files (data-file-schema.xml), and charge density files (charge-density.dat). Temporary scratch files are also written to this directory.
 
 **wfcdir** - specifies the directory from which initial wavefunction files are sourced. If not specified, defaults to *outdir*. Particularly useful in sequential jobs!
 
 ## File Handling for Smeared vs Fixed Wavefunctions
-When working with smeared and fixed occupations (see [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md)), it is important to keep wavefunction files saved in separate directories. 
+When working with smeared and fixed occupations (see [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md)), it is important to keep smeared/fixed wavefunction files saved in separate directories. 
+
+In the input file for the smeared SCF calculation, set *outdir = 'smear_data'.* This will save the smeared wavefunctions in *./smear_data/prefix.save* when the calculations completes.
+
+In the input file for the fixed SCF calculation, set *wfc_dir = 'smear_data'* and *outdir = 'fixed_data'.* This will allow QE to start the fixed SCF calculation using the previously-converged wavefunctions found in the *./smear_data/prefix.save* directory, and save them in a separate directory, *./fixed_data/prefix.save*, without overwriting the original smeared data.
