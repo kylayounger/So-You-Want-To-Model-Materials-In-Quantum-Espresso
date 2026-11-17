@@ -13,7 +13,7 @@ File handling dictates what files are called during job submissions, and what fi
 ## How QE Manages Files
 QE handles files based on a few key parameters:
 
-**prefix** - assigns a custom string to all generated folders and data files associated with the input file; **this is the most prevalent parameter for file handling in QE!** This parameter is found in the input file (.in) for a job. 
+**prefix** - assigns a custom string to all generated folders and data files associated with the input file. This parameter is found in the input file (.in) for a job. 
 
 When running sequential jobs on the same system (ie relax --> SCF --> NSCF), *prefix* must be the same between all input files. All temporary, binary, and saved files are appended with a *prefix* string - this is how sequential jobs call the correct data from previous calculations. 
 
@@ -26,3 +26,4 @@ For example, if *outdir = cat* and *prefix = mouse*, saved data would be stored 
 **wfcdir** - specifies the directory from which initial wavefunction files are sourced. If not specified, defaults to *outdir*. Particularly useful in sequential jobs!
 
 ## File Handling for Smeared vs Fixed Wavefunctions
+When working with smeared and fixed occupations (see [Smeared vs. Fixed Occupations](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Self-Consistent%20Field%20(SCF)%20Jobs/Smeared%20vs.%20Fixed%20Occupations.md)), it is important to keep wavefunction files saved in separate directories. 
