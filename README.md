@@ -19,3 +19,4 @@ If you find it useful, PLEASE DON'T FORGET TO CITE!
 11. [Phonon Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Phonon%20Jobs/Phonon.md)
 12. [Dynamical Matrix (dynmat) Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Dynamical%20Matrix%20(dynmat)%20Jobs/dynmat.md)
 13. [Combining Jobs (Pipeline)](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Combining%20Jobs%20(Pipeline)/Pipeline.md)
+14. [Useful Resources & References]()
