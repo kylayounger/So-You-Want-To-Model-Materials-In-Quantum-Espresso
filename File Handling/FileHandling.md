@@ -13,14 +13,16 @@ File handling dictates what files are called during job submissions, and what fi
 ## How QE Manages Files
 QE handles files based on a few key parameters:
 
-**prefix** - this parameter is found in the input file (.in) for a job. *prefix* assigns a custom string to all generated folders and data files associated with the input file; **this is the most prevalent parameter for file handling in QE!** 
+**prefix** - assigns a custom string to all generated folders and data files associated with the input file; **this is the most prevalent parameter for file handling in QE!** This parameter is found in the input file (.in) for a job. 
 
-When running sequential jobs on the same system (ie relax --> SCF --> NSCF), *prefix* must be the same between all input files. This is because 
+When running sequential jobs on the same system (ie relax --> SCF --> NSCF), *prefix* must be the same between all input files. All temporary, binary, and saved files are appended with a *prefix* string - this is how sequential jobs call the correct data from previous calculations. 
 
-**outdir** - specifies the directory in which output data is stored.
+**outdir** - specifies the directory in which output data is stored. Found in the input file (.in) for a job.
 
-For example, if *outdir = cat* and *prefix = mouse*, data would be stored in the directory ./cat/mouse.save
+For example, if *outdir = cat* and *prefix = mouse*, saved data would be stored in the directory *./cat/mouse.save*
 
-**wfcdir** - specifies the directory from which initial wavefunctions are sourced.
+*mouse.save* would contain the wavefunction files (wfc.dat), XML schema file (data-file-schema.xml), and charge density files (charge-density.dat). Temporary scratch files are also written to this directory.
+
+**wfcdir** - specifies the directory from which initial wavefunction files are sourced. If not specified, defaults to *outdir*. Particularly useful in sequential jobs!
 
 ## File Handling for Smeared vs Fixed Wavefunctions
