@@ -28,22 +28,3 @@ Quantum Espresso is easy to use on High Performance Computers (HPCs); the progra
 
 **4. Pseudopotential Range:**
 Quantum Espresso supports a wide range of psuedopotentials, allowing you to select the type of core-electron approximation that suits your system best. The program supports Projector Augmented Wave (PAW), Ultrasoft, and Norm-Conserving (NC) pseudopotentials.
-
-
-## Useful Resources
-These resources have been invaluable in my journey in learning Quantum Espresso! Much of the information I relay here is sourced from the following:
-
-**Quantum Espresso Documentation:**
-https://www.quantum-espresso.org/documentation/
-
-**Density Functional Theory Using Quantum Espresso (blog):**
-https://pranabdas.github.io/espresso/
-
-**Materials Square (blog):**
-https://www.materialssquare.com/
-
-**Ab Initio Quantum Simulation in Solid State Chemistry (Text):**
-Dovesi, R., Civalleri, B., Roetti, C., Saunders, V.R. and Orlando, R. (2005). Ab Initio Quantum Simulation in Solid State Chemistry. In Reviews in Computational Chemistry (eds K.B. Lipkowitz, R. Larter and T.R. Cundari). https://doi.org/10.1002/0471720895.ch1 
-
-**Intepreting Band Structure, DOS and PDOS Data:**
-https://medium.com/@willa_21886/electronic-structure-analysis-mastering-density-of-states-dos-and-projected-dos-why-its-0a09fa369051 
