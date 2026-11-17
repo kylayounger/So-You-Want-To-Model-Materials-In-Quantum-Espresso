@@ -9,4 +9,4 @@
 
 ## How QE Manages Files
 
-## File Handling for Smeared/Fixed Wavefunctions
+## File Handling for Smeared vs Fixed Wavefunctions
