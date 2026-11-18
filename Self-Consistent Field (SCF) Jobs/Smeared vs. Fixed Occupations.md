@@ -95,7 +95,7 @@ Expands the delta function using Hermite polynomials:
 Where $A_n$ is the coefficient of the n-th term in the Hermite expansion, defined by:
 
 ```math
-A_n = \frac{\left(-1\right)^n}{n! \; 4^n \sqrt{ \; \pi}}
+A_n = \frac{\left(-1\right)^n}{n! \; 4^n \sqrt{\pi}}
 ```
 
 This cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
