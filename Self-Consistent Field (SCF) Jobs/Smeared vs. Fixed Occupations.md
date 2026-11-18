@@ -90,7 +90,7 @@ Gaussian smearing is straight-forward to explain: it simply smoothes out the tra
 Expands the delta function using Hermite polynomials:
 
 ```math
-\del_N \left(x\right) = \sum_{n=0}^N A_n H_{{2n} \left(x\right) e^{-x^2}}
+\delta_N \left(x\right) = \sum_{n=0}^N A_n H_{2n} \left(x\right) e^{-x^2}
 ```
 Where $A_n$ is the coefficient of the n-th term in the Hermite expansion, defined by:
 
