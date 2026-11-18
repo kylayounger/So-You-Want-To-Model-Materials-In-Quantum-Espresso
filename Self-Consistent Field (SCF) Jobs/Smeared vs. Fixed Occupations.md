@@ -86,6 +86,20 @@ And $t$ is a dummy integration variable.
 
 Gaussian smearing is straight-forward to explain: it simply smoothes out the transition from $u_{nk} = 0$ to $u_{nk} = 1$.
 
+### Fermi-Dirac Smearing: N = 0
+Uses a physical temperature distribution to smoothen the Heaviside Step Function:
+
+```math
+f\left(x\right) = \frac{1}{e^{-x} + 1}
+```
+Where $x$ is defined by:
+```math
+x = \frac{\mu - \epsilon_{nk}}{\sigma}
+```
+And $\mu$ is the Fermi Level, $\epsilon_{nk}$ is the Kohn-Sham eigenvalue, and $\sigma$ is the smearing width (degauss).
+
+As T --> 0, the function becomes equal to the Heaviside Step Function. Fermi-Dirac smearing treats electrons within the system similarly to gas.
+
 ### Methfessel-Paxton Smearing: N = 1
 Expands the delta function using Hermite polynomials:
 
