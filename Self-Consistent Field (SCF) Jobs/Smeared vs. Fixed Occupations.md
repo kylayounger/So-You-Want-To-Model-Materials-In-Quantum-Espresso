@@ -84,9 +84,22 @@ erfc(x) = \frac{2}{\sqrt{\pi}} \; \int_x^{\inf} \; e^{-t^2} \; dt
 
 And $t$ is a dummy integration variable.
 
-Gaussian smearing is straight-forward to explain: it simply smoothes out the transition from $u_{nk} = 0$ to $u_{nk} = 1$
+Gaussian smearing is straight-forward to explain: it simply smoothes out the transition from $u_{nk} = 0$ to $u_{nk} = 1$.
 
 ### Methfessel-Paxton Smearing: N = 1
+Expands the delta function using Hermite polynomials:
+
+```math
+\del_N \left(x\right) = \sum_{n=0}^N A_n H_{{2n} \left(x\right) e^{-x^2}
+```
+Where $A_n$ is the coefficient of the n-th term in the Hermite expansion, defined by:
+
+```math
+A_n = \frac{\left(-1\right)^n}{n!4^n \sqrt{\pi}}
+```
+
+This cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
+
 ### Methfessel-Vanderbilt Smearing: N = 1
 
 ## Sources and Resources
