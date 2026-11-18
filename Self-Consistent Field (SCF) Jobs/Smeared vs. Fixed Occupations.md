@@ -130,11 +130,13 @@ Adds two new constraints to the smearing function, resulting in the following:
 \delta\left(x\right) = \frac{1}{\sqrt{\pi}} \left(2 - \sqrt{2x}\right) exp\left[- \left(x - \frac{1}{\sqrt{2}}\right)^2\right]
 ```
 <br>
+
 The first condition removes the quadratic dependance on $\sigma$:
 ```math
 \int_{-\infty}^{\infty} \epsilon^2 \delta\left(\epsilon\right) d\epsilon = 0
 ```
 <br>
+
 The second condition ensures the occupations remain non-negative:
 ```math
 \inf_{-\infty}^{\infty} \delta\left(\epsilon\right) d\epsilon \geq 0
