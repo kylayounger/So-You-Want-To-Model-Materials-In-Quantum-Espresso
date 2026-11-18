@@ -120,6 +120,17 @@ H_{n+1}\left(x\right) = 2x H_n\left(x\right) - 2n H_{n-1}\left(x\right)
 Methfessel-Paxton smearing cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
 
 ### Methfessel-Vanderbilt Smearing: N = 1
+Adds two new constraints to the smearing function, resulting in the following:
+
+```math
+\delta\left(x\right) = \frac{1}{\sqrt{\pi}} \left(2 - \sqrt{2x}\right) exp\left[- \left(x - \frac{1}{\sqrt{2}}\right)^2\right]
+```
+The first condition is as follows:
+```math
+\int_{-\inf}^{\inf} \epsilon^2 \delta\left(\epsilon\right) d\epsilon = 0
+```
+
+
 
 ## Sources and Resources
 
