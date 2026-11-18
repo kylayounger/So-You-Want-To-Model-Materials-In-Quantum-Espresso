@@ -68,7 +68,7 @@ In the electron occupation function, N controls how many correction terms are ad
 
 ## Types of Smearing
 ### Gaussian Smearing: N = 0
-Basic smearing used to smooth discrete or discontinuous occupations into a normal distribution:
+Basic smearing that is used to smooth discrete or discontinuous occupations into a normal distribution:
 
 ```math
 f_{N=0}(x) = \; \frac{1}{2} \; erfc(-x)
