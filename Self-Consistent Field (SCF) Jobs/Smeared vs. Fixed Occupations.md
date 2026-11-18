@@ -97,6 +97,11 @@ Where $A_n$ is the coefficient of the n-th term in the Hermite expansion, define
 ```math
 A_n = \frac{\left(-1\right)^n}{n! \; 4^n \sqrt{\pi}}
 ```
+$H_n\left(x\right)$ are Hermite Polynomials, defined by:
+
+```math
+H_{n+1}\left(x\right) = 2x H_n\left(x\right) - 2n H_{n-1}\left(x\right)
+```
 
 This cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
 
