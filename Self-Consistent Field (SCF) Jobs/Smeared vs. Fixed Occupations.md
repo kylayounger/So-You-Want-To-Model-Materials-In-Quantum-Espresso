@@ -98,7 +98,7 @@ x = \frac{\mu - \epsilon_{nk}}{\sigma}
 ```
 And $\mu$ is the Fermi Level, $\epsilon_{nk}$ is the Kohn-Sham eigenvalue, and $\sigma$ is the smearing width (degauss).
 
-As T --> 0, the function becomes equal to the Heaviside Step Function. Fermi-Dirac smearing treats electrons within the system similarly to gas.
+As $T \rightarrow 0$, the function becomes equal to the Heaviside Step Function. Fermi-Dirac smearing treats electrons within the system similarly to gas.
 
 ### Methfessel-Paxton Smearing: N = 1
 Expands the delta function using Hermite polynomials:
