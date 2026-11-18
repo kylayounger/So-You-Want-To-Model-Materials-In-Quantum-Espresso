@@ -64,7 +64,6 @@ In the electron occupation function, N controls how many correction terms are ad
 > smearing = 'mp'; N = 1, error = $O(\sigma^4)$; Methfessel-Paxton
 > 
 > smearing = 'mv'; N = 1, error = $O(\sigma^4)$; Methfessel-Vanderbilt
-<br>
 
 ## Types of Smearing
 ### Gaussian Smearing: N = 0
