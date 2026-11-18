@@ -139,10 +139,11 @@ The first condition removes the quadratic dependance on $\sigma$:
 
 The second condition ensures the occupations remain non-negative:
 ```math
-\inf_{-\infty}^{\infty} \delta\left(\epsilon\right) d\epsilon \geq 0
+\int_{-\infty}^{\infty} \delta\left(\epsilon\right) d\epsilon \geq 0
 ```
 <br>
 
+Methfessel-Vanderbilt smearing is almost independent of $\sigma$ and doesn't give negative occupation values - this makes it a popular choice for many modern metal calculations.
 
 ## Sources and Resources
 
