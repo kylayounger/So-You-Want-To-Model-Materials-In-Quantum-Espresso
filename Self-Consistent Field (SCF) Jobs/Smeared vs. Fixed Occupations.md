@@ -127,11 +127,11 @@ Adds two new constraints to the smearing function, resulting in the following:
 ```
 The first condition removes the quadratic dependance on $\sigma$:
 ```math
-\int_{-\infinity}^{\infinity} \epsilon^2 \delta\left(\epsilon\right) d\epsilon = 0
+\int_{-\infty}^{\infty} \epsilon^2 \delta\left(\epsilon\right) d\epsilon = 0
 ```
 The second condition ensures the occupations remain non-negative:
 ```math
-\inf_{-\infinity}^{\infinity} \delta\left(\epsilon\right) d\epsilon \geq 0
+\inf_{-\infty}^{\infty} \delta\left(\epsilon\right) d\epsilon \geq 0
 ```
 
 
