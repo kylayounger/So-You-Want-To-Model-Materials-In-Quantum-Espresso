@@ -92,10 +92,12 @@ Uses a physical temperature distribution to smoothen the Heaviside Step Function
 ```math
 f\left(x\right) = \frac{1}{e^{-x} + 1}
 ```
+<br>
 Where $x$ is defined by:
 ```math
 x = \frac{\mu - \epsilon_{nk}}{\sigma}
 ```
+<br>
 And $\mu$ is the Fermi Level, $\epsilon_{nk}$ is the Kohn-Sham eigenvalue, and $\sigma$ is the smearing width (degauss).
 
 As $T \rightarrow 0$, the smearing function becomes equal to the Heaviside Step Function. Fermi-Dirac smearing treats electrons within the system similarly to gas.
@@ -106,17 +108,19 @@ Expands the delta function using Hermite polynomials:
 ```math
 \delta_N \left(x\right) = \sum_{n=0}^N A_n H_{2n} \left(x\right) e^{-x^2}
 ```
+<br>
 Where $A_n$ is the coefficient of the n-th term in the Hermite expansion, defined by:
 
 ```math
 A_n = \frac{\left(-1\right)^n}{n! \; 4^n \sqrt{\pi}}
 ```
+<br>
 $H_n\left(x\right)$ are Hermite Polynomials, defined by:
 
 ```math
 H_{n+1}\left(x\right) = 2x H_n\left(x\right) - 2n H_{n-1}\left(x\right)
 ```
-
+<br>
 Methfessel-Paxton smearing cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
 
 ### Methfessel-Vanderbilt Smearing: N = 1
@@ -125,14 +129,17 @@ Adds two new constraints to the smearing function, resulting in the following:
 ```math
 \delta\left(x\right) = \frac{1}{\sqrt{\pi}} \left(2 - \sqrt{2x}\right) exp\left[- \left(x - \frac{1}{\sqrt{2}}\right)^2\right]
 ```
+<br>
 The first condition removes the quadratic dependance on $\sigma$:
 ```math
 \int_{-\infty}^{\infty} \epsilon^2 \delta\left(\epsilon\right) d\epsilon = 0
 ```
+<br>
 The second condition ensures the occupations remain non-negative:
 ```math
 \inf_{-\infty}^{\infty} \delta\left(\epsilon\right) d\epsilon \geq 0
 ```
+<br>
 
 
 ## Sources and Resources
