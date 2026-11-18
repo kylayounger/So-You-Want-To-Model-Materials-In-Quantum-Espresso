@@ -103,7 +103,7 @@ $H_n\left(x\right)$ are Hermite Polynomials, defined by:
 H_{n+1}\left(x\right) = 2x H_n\left(x\right) - 2n H_{n-1}\left(x\right)
 ```
 
-This cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
+Methfessel-Paxton smearing cancels out the lowest-order errors in $\sigma$, and needs no energy correction. Methfessel-Paxton smearing is generally considered to be accurate to the third order. 
 
 ### Methfessel-Vanderbilt Smearing: N = 1
 
