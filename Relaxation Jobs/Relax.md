@@ -130,6 +130,6 @@ For example, if your system has 40 irreducible k-points, possible NPOOL numbers 
 The number of irreducible k-points can be found by searching 'number of k points' in the relax.out file; unfortunatly, this means you have to guess NPOOL upon your first job submission. When in doubt, NPOOL = 1 will always run successfully, but may be time consuming.
 
 ## Common Errors
-**Error in routine check_atoms (1): atoms # X and # Y overlap!** - 
+**Error in routine check_atoms (1): atoms # X and # Y overlap!** - just as it sounds: two of the atoms in your input geometry overlap. This is a common issue when converting your coordinates from cartesian to fractional; double-check your input geometry, or fractional/cartesian conversion script if applicable. This error can also be the result of incorrect cell parameters.
 
-**Error in routine cdiaghg ... problems computing cholesky / S Matrix not positive definite** - 
+**Error in routine cdiaghg ... problems computing cholesky / S Matrix not positive definite** - similar atomic overlap error. 'cholesky' refers to a Cholesky decomposition, which is used to reduce memory storage when handling two-electron repulsion integrals. Cholesky calculations require positive overlap matrices, so any atomic overlap will result in this error. Can be caused by fractional/cartesian conversion errors, incorrect cell parameters, or incorrect psuedopotential files.
