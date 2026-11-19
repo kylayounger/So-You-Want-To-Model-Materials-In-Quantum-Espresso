@@ -17,3 +17,5 @@ The Brillouin Zone K-paths for primitive cell types can be found at many sources
 Dal Corso, A. *Points inside the Brillouin Zone.* https://www.quantum-espresso.org/Doc/user_guide_PDF/brillouin_zones.pdf.
 
 Brillouin Zone Wikipedia entry. https://en.wikipedia.org/wiki/Brillouin_zone.
+
+Dovesi, R., Civalleri, B., Roetti, C., Saunders, V.R. and Orlando, R. (2005). *Ab Initio Quantum Simulation in Solid State Chemistry.* In Reviews in Computational Chemistry (eds K.B. Lipkowitz, R. Larter and T.R. Cundari). https://doi.org/10.1002/0471720895.ch1.
