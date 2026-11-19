@@ -8,6 +8,8 @@
 ## What is a K-Path?
 K-Path refers to a specific order of points inside the First Brillouin Zone of a material's unit cell. 
 
+In QE, the K-Path is used to set high-symmetry points in NSCF input files and to properly label band structure diagrams.
+
 ## Finding the right K-Path for your system
 The Brillouin Zone K-paths for primitive cell types can be found at many sources (such as the [Brillouin Zone Wikipedia entry](https://en.wikipedia.org/wiki/Brillouin_zone)).
 
