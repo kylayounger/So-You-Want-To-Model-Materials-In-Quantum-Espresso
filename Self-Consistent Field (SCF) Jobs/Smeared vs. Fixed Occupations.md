@@ -8,6 +8,9 @@
 5. [Additional Resources](#additional-resources)
 
 ## What are Occupations?
+Occupations describe how individual electrons populate energetic orbitals within a system or molecule. When an occupation = 1, it is said to be occupied by an electron, or "full". When an occupation = 0, it is said to be unoccupied by electrons, or "empty".
+
+Knowing the occupation of electron orbitals is very important when modelling band structures and density of states, as well as when computing higher-order parameters (such as phonons). However, calculating occupations in QE is a complex process with many handles, so it is important to use the correct parameters for your system!
 
 ## Fixed Occupations
 
