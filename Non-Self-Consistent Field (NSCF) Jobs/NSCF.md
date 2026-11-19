@@ -4,8 +4,9 @@
 1. [NSCF Job Basics](#nscf-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
-4. [Selecting K-paths]()
-5. [Example NSCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/nscf.in)
+4. [Common Errors](#common-errors)
+5. [Selecting K-paths]()
+6. [Example NSCF Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Non-Self-Consistent%20Field%20(NSCF)%20Jobs/nscf.in)
 
 ## NSCF Job Basics
 **Purpose:** to generate eigenvectors and eigenvalues of the Kohn-Sham Hamiltonian using a denser k-grid. NSCF calculations use the converged SCF charge density *without updating/recalculating it;* this is why it is so important to have an accurate and precise SCF calculation.
@@ -129,7 +130,7 @@ I recommend using the -pd .true. modifier in all submission scripts after SCF (N
 
 **NPOOL** - see [Relaxation Jobs](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.md#significant-parameters-1)
 
-## Common Errors:
+## Common Errors
 **"problems computing cholesky"** - the overlap matrix is not positive and definite. Switch to diagonalization = 'cg' and/or increase ecutwfc.
 
 **"c_bands: X eigenvalues not converged"** - mismatched nbnd parameter; NSCF input has different nbnd number than SCF input, leading to 'unconverged' eigenvalues (eigenvalues that don't exist).
