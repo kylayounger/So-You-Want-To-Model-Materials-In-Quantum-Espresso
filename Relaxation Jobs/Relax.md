@@ -3,8 +3,9 @@
 1. [Relaxation Job Basics](#relaxation-job-basics)
 2. [Input File Structure](#input-file-structure)
 3. [Submission File Structure](#submission-file-structure)
-4. [Why Fractional Coordinates?](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Why%20Fractional%20Coordinates%3F.md)
-5. [Example Relaxation Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.in)
+4. [Common Errors](#common-errors)
+5. [Why Fractional Coordinates?](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Why%20Fractional%20Coordinates%3F.md)
+6. [Example Relaxation Input File](https://github.com/kylayounger/So-You-Want-To-Model-Materials-In-Quantum-Espresso/blob/main/Relaxation%20Jobs/Relax.in)
 
 ## Relaxation Job Basics
 **Purpose:** To verify and stabilize atomic geometries. Generally conducted before calculating the electronic structure of a given geometry to ensure it is physically reasonable.
@@ -127,3 +128,8 @@ echo "Completed RELAX: $(date)"    ! written to .out file
 For example, if your system has 40 irreducible k-points, possible NPOOL numbers are 1, 2, 4, 5, 8, 10, 20.
 
 The number of irreducible k-points can be found by searching 'number of k points' in the relax.out file; unfortunatly, this means you have to guess NPOOL upon your first job submission. When in doubt, NPOOL = 1 will always run successfully, but may be time consuming.
+
+## Common Errors
+**Error in routine check_atoms (1): atoms # X and # Y overlap!** - 
+
+**Error in routine cdiaghg ... problems computing cholesky / S Matrix not positive definite** - 
